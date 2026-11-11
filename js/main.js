@@ -15,7 +15,7 @@
     call: 'Позвонить', cta: 'Запросите предложение',
     heroLead: 'Мы семейная мастерская: делаем кухни и мебель по размерам вашего дома. Замеряем, проектируем, изготавливаем и устанавливаем.',
     heroReg: 'Semar kitchens OÜ, рег. код 16677638',
-    servH: 'Услуги', servIntro: 'Изготавливаем кухни и мебель на заказ в Эстонии. Возможна доставка и за её пределы.', tel2Lbl: 'На эстонском:',
+    servH: 'Услуги', servIntro: 'Изготавливаем кухни и мебель на заказ в Таллинне и по всей Эстонии. Возможна доставка и за её пределы.', tel2Lbl: 'На эстонском:',
     s1h: 'Кухонная мебель', s1p: 'Делаем кухню по размерам вашего помещения и устанавливаем её. Фасады выставляем с ровными зазорами.',
     s1alt: 'Кухонные шкафы и ящики терракотового цвета, тёмная столешница',
     s2h: 'Столешницы', s2p: 'Устанавливаем столешницу и встраиваем в неё мойку и варочную панель.',
@@ -63,7 +63,7 @@
     st4h: 'Монтаж', st4p: 'Привозим и устанавливаем мебель. Регулируем двери и ящики и вместе с вами всё проверяем.',
     aboutH: 'О нас',
     aboutP1: 'Мы, Сергей и Марина, основали семейную фирму Semar kitchens в 2023 году. Кухни и мебель делаем в своей мастерской в Виймси, Rohuneeme tee 1.',
-    aboutP2: 'Каждый шкаф и фасад делаем по размерам вашего помещения. Замеряем, проектируем, изготавливаем и устанавливаем сами. Работаем по всей Эстонии.',
+    aboutP2: 'Каждый шкаф и фасад делаем по размерам вашего помещения. Замеряем, проектируем, изготавливаем и устанавливаем сами. Работаем в Таллинне, Харьюмаа и по всей Эстонии.',
     aboutPhotoAlt: 'В мастерской: распил детали на форматно-раскроечном станке',
     dataH: 'Данные компании',
     dName: 'Название', dCode: 'Регистрационный код', dReg: 'Зарегистрирована', dSeat: 'Юридический адрес', dSeatV: 'Маарду, Харьюмаа',
@@ -88,7 +88,7 @@
     call: 'Call', cta: 'Request a quote',
     heroLead: 'We are a family workshop making kitchens and furniture to fit your home. We measure, design, build and install.',
     heroReg: 'Semar kitchens OÜ, registry code 16677638',
-    servH: 'Services', servIntro: 'We make kitchens and furniture to order in Estonia. Delivery outside Estonia is also possible.', tel2Lbl: 'In Estonian:',
+    servH: 'Services', servIntro: 'We make kitchens and furniture to order in Tallinn and all over Estonia. Delivery outside Estonia is also possible.', tel2Lbl: 'In Estonian:',
     s1h: 'Kitchen furniture', s1p: 'We make the kitchen to the measurements of your room and install it. We align the fronts with even gaps.',
     s1alt: 'Terracotta kitchen cabinets and drawers, a dark worktop',
     s2h: 'Worktops', s2p: 'We fit the worktop and set the sink and the hob into it.',
@@ -134,7 +134,7 @@
     st4h: 'Installation', st4p: 'We bring the furniture over and install it. We adjust the doors and drawers and check everything together with you.',
     aboutH: 'About us',
     aboutP1: 'Semar kitchens is the family firm of Sergei and Marina. We founded it in 2023 and make kitchens and furniture in our own workshop in Viimsi, Rohuneeme tee 1.',
-    aboutP2: 'Every cabinet and front is made to the measurements of your room. We measure, design, build and install everything ourselves. We work all over Estonia.',
+    aboutP2: 'Every cabinet and front is made to the measurements of your room. We measure, design, build and install everything ourselves. We work in Tallinn, Harju County and all over Estonia.',
     aboutPhotoAlt: 'In the workshop: cutting a panel on the sliding table saw',
     dataH: 'Company details',
     dName: 'Company name', dCode: 'Registry code', dReg: 'Registered', dSeat: 'Registered address', dSeatV: 'Maardu, Harju County',
@@ -152,14 +152,17 @@
     lbAria: 'Photo full size', lbClose: 'Close', lbPrev: 'Previous photo', lbNext: 'Next photo'
   };
   var DICT = { ru: RU, en: EN };
+  // 11.11 SEO: the same titles and descriptions are written into /, /ru/ and /en/ by _work/build_golive.py (it reads META from here)
   var META = {
-    et: { title: 'Köögid ja mööbel eritellimusel | Semar kitchens OÜ',
-          desc: 'Semar kitchens on pereettevõte: teeme köögid ja mööbli eritellimusel. Mõõdame, projekteerime, valmistame ja paigaldame. Üle Eesti. Helistage +372 5594 6489.' },
-    ru: { title: 'Кухни и мебель на заказ | Semar kitchens OÜ',
-          desc: 'Semar kitchens: семейная мастерская кухонь и мебели на заказ. Замер, проект, изготовление и монтаж. Вся Эстония. Звоните +372 5554 9755.' },
-    en: { title: 'Kitchens and furniture made to order | Semar kitchens OÜ',
-          desc: 'Semar kitchens is a family workshop making kitchens and furniture to order. Measuring, design, manufacturing and installation. All of Estonia. Call +372 5554 9755.' }
+    et: { title: 'Köögimööbel ja mööbel eritellimusel Tallinnas | Semar kitchens',
+          desc: 'Pereettevõte Semar kitchens: köögimööbel, riidekapid ja vannitoamööbel eritellimusel. Oma töökoda Viimsis, töötame Tallinnas ja üle Eesti. Tel +372 5594 6489.' },
+    ru: { title: 'Кухни и мебель на заказ в Таллинне | Semar kitchens',
+          desc: 'Семейная мастерская Semar kitchens: кухни, шкафы и мебель для ванной на заказ. Своя мастерская в Виймси, работаем в Таллинне и по всей Эстонии. Тел. +372 5554 9755.' },
+    en: { title: 'Custom kitchens and furniture in Tallinn | Semar kitchens',
+          desc: 'Semar kitchens is a family workshop in Viimsi making kitchens, wardrobes and bathroom furniture to order. We work in Tallinn and all over Estonia. Call +372 5554 9755.' }
   };
+  // 11.11 SEO: every language has its own address; the switch stays instant and only rewrites the address bar
+  var PATH = { et: '/', ru: '/ru/', en: '/en/' };
   var MSG = {
     et: { menuOpen: 'Ava menüü', menuClose: 'Sulge menüü',
           eName: 'Kirjutage oma nimi.', ePhone: 'Kirjutage telefoninumber.', ePhoneBad: 'Kontrollige telefoninumbrit.', eType: 'Valige projekti tüüp.',
@@ -194,14 +197,20 @@
   };
 
   /* ---------- language ---------- */
-  var lang = 'et';
+  // the page's own language: 'et' on /, 'ru' on /ru/, 'en' on /en/ (those two are pre-rendered in their language and carry the Estonian texts in #i18n-et)
+  var page = (root.getAttribute('lang') === 'ru' || root.getAttribute('lang') === 'en') ? root.getAttribute('lang') : 'et';
+  var lang = page;
   var textEls = doc.querySelectorAll('[data-t]'), attrEls = doc.querySelectorAll('[data-ta]');
-  var ET = {};
-  Array.prototype.forEach.call(textEls, function (el) { var k = el.getAttribute('data-t'); if (!(k in ET)) ET[k] = el.textContent; });
-  Array.prototype.forEach.call(attrEls, function (el) {
-    el.getAttribute('data-ta').split(',').forEach(function (pair) { var p = pair.split(':'); if (!(p[1] in ET)) ET[p[1]] = el.getAttribute(p[0]); });
-  });
+  var ET = {}, etJson = doc.getElementById('i18n-et');
+  if (etJson) { try { ET = JSON.parse(etJson.textContent); } catch (e) { ET = {}; } }
+  else {
+    Array.prototype.forEach.call(textEls, function (el) { var k = el.getAttribute('data-t'); if (!(k in ET)) ET[k] = el.textContent; });
+    Array.prototype.forEach.call(attrEls, function (el) {
+      el.getAttribute('data-ta').split(',').forEach(function (pair) { var p = pair.split(':'); if (!(p[1] in ET)) ET[p[1]] = el.getAttribute(p[0]); });
+    });
+  }
   ET.menuOpen = MSG.et.menuOpen;
+  function setUrl() { try { history.replaceState(null, '', PATH[lang] + location.hash); } catch (e) {} }
   function t(k) { var d = DICT[lang]; return (d ? d[k] : ET[k]) || ET[k] || ''; }
   function setMeta(sel, val) { var m = doc.querySelector(sel); if (m) m.setAttribute('content', val); }
 
@@ -244,7 +253,7 @@
   Array.prototype.forEach.call(doc.querySelectorAll('.lang__b'), function (b) {
     b.addEventListener('click', function () {
       applyLang(b.getAttribute('data-lang'), true);
-      try { history.replaceState(null, '', location.pathname + (lang === 'et' ? '' : '?lang=' + lang) + location.hash); } catch (e) {}
+      setUrl();
     });
   });
 
@@ -575,10 +584,13 @@
   if (soc) soc.hidden = !soc.querySelector('.social__a:not([hidden])');
 
   /* ---------- start ---------- */
-  var start = 'et';
+  // old ?lang= links still work and move to the language address; a saved choice applies on / only (a /ru/ or /en/ page keeps its language)
+  var start = page, mm = null;
   try {
-    var mm = /[?&]lang=(et|ru|en)\b/.exec(location.search);
-    start = mm ? mm[1] : (localStorage.getItem('semar-lang') || 'et');
+    mm = /[?&]lang=(et|ru|en)\b/.exec(location.search);
+    start = mm ? mm[1] : (page === 'et' ? (localStorage.getItem('semar-lang') || 'et') : page);
   } catch (e) {}
-  if (start === 'ru' || start === 'en') applyLang(start, false); else root.classList.remove('i18n-wait');
+  if (start !== 'ru' && start !== 'en') start = 'et';
+  if (start !== page) applyLang(start, false); else root.classList.remove('i18n-wait');
+  if (start !== page || mm) setUrl();
 })();

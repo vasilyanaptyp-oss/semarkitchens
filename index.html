@@ -3,19 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Köögid ja mööbel eritellimusel | Semar kitchens OÜ</title>
-<meta name="description" content="Semar kitchens on pereettevõte: teeme köögid ja mööbli eritellimusel. Mõõdame, projekteerime, valmistame ja paigaldame. Üle Eesti. Helistage +372 5594 6489.">
+<title>Köögimööbel ja mööbel eritellimusel Tallinnas | Semar kitchens</title>
+<meta name="description" content="Pereettevõte Semar kitchens: köögimööbel, riidekapid ja vannitoamööbel eritellimusel. Oma töökoda Viimsis, töötame Tallinnas ja üle Eesti. Tel +372 5594 6489.">
 <link rel="canonical" href="https://semarkitchens.com/">
+<link rel="alternate" hreflang="et" href="https://semarkitchens.com/">
+<link rel="alternate" hreflang="ru" href="https://semarkitchens.com/ru/">
+<link rel="alternate" hreflang="en" href="https://semarkitchens.com/en/">
+<link rel="alternate" hreflang="x-default" href="https://semarkitchens.com/">
 <meta property="og:url" content="https://semarkitchens.com/">
 <meta name="theme-color" content="#f4eee0">
-<link rel="icon" href="img/favicon-48.png" sizes="48x48" type="image/png">
-<link rel="icon" href="img/favicon-192.png" sizes="192x192" type="image/png">
-<link rel="icon" href="img/favicon-512.png" sizes="512x512" type="image/png">
-<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="icon" href="/img/favicon-48.png" sizes="48x48" type="image/png">
+<link rel="icon" href="/img/favicon-192.png" sizes="192x192" type="image/png">
+<link rel="icon" href="/img/favicon-512.png" sizes="512x512" type="image/png">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Semar kitchens">
-<meta property="og:title" content="Köögid ja mööbel eritellimusel | Semar kitchens OÜ">
-<meta property="og:description" content="Pereettevõte: köögid ja mööbel eritellimusel. Mõõdame, projekteerime, valmistame ja paigaldame. Üle Eesti.">
+<meta property="og:title" content="Köögimööbel ja mööbel eritellimusel Tallinnas | Semar kitchens">
+<meta property="og:description" content="Pereettevõte Semar kitchens: köögimööbel, riidekapid ja vannitoamööbel eritellimusel. Oma töökoda Viimsis, töötame Tallinnas ja üle Eesti. Tel +372 5594 6489.">
 <meta property="og:image" content="https://semarkitchens.com/img/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -24,34 +28,58 @@
 <meta property="og:locale:alternate" content="ru_RU">
 <meta property="og:locale:alternate" content="en_GB">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Köögid ja mööbel eritellimusel | Semar kitchens OÜ">
-<meta name="twitter:description" content="Pereettevõte: köögid ja mööbel eritellimusel. Mõõdame, projekteerime, valmistame ja paigaldame. Üle Eesti.">
+<meta name="twitter:title" content="Köögimööbel ja mööbel eritellimusel Tallinnas | Semar kitchens">
+<meta name="twitter:description" content="Pereettevõte Semar kitchens: köögimööbel, riidekapid ja vannitoamööbel eritellimusel. Oma töökoda Viimsis, töötame Tallinnas ja üle Eesti. Tel +372 5594 6489.">
 <meta name="twitter:image" content="https://semarkitchens.com/img/og.jpg">
-<link rel="preload" href="fonts/lora-lat.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="fonts/carlito-lat-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/style.css">
+<link rel="preload" href="/fonts/lora-lat.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/carlito-lat-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/css/style.css">
 <script>
-/* language before first paint: ?lang=ru|en or a saved choice hides the page until main.js has switched it */
+/* language before first paint: ?lang=et|ru|en (old links), or on / a saved choice, hides the page until main.js has switched it */
 (function () {
-  var l = null;
-  try { var m = /[?&]lang=(et|ru|en)\b/.exec(location.search); l = m ? m[1] : localStorage.getItem('semar-lang'); } catch (e) {}
-  if (l === 'ru' || l === 'en') { var d = document.documentElement; d.className += ' i18n-wait'; setTimeout(function () { d.classList.remove('i18n-wait'); }, 1500); }
+  var d = document.documentElement, p = d.getAttribute('lang'), l = null;
+  try { var m = /[?&]lang=(et|ru|en)/.exec(location.search); l = m ? m[1] : (p === 'et' ? localStorage.getItem('semar-lang') : null); } catch (e) {}
+  if ((l === 'et' || l === 'ru' || l === 'en') && l !== p) { d.className += ' i18n-wait'; setTimeout(function () { d.classList.remove('i18n-wait'); }, 1500); }
 })();
 </script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Semar kitchens OÜ",
-  "legalName": "Semar kitchens OÜ",
-  "description": "Pereettevõte, mis teeb köögid ja mööbli eritellimusel: mõõtmine, projekt, valmistamine ja paigaldus. Üle Eesti, tarne ka välismaale.",
-  "telephone": "+37255549755",
-  "email": "sergeiinstaller@gmail.com",
-  "foundingDate": "2023-02-15",
-  "identifier": {"@type": "PropertyValue", "propertyID": "registrikood", "value": "16677638"},
-  "address": {"@type": "PostalAddress", "streetAddress": "Rohuneeme tee 1", "addressLocality": "Viimsi", "addressRegion": "Harjumaa", "addressCountry": "EE"},
-  "hasMap": "https://www.google.com/maps/search/?api=1&query=Rohuneeme+tee+1%2C+Viimsi",
-  "areaServed": {"@type": "Country", "name": "Estonia"}
+  "@graph": [
+    {
+      "@type": ["FurnitureStore", "HomeAndConstructionBusiness"],
+      "@id": "https://semarkitchens.com/#business",
+      "name": "Semar kitchens",
+      "legalName": "Semar kitchens OÜ",
+      "alternateName": ["Semar kitchens OÜ", "Semar kitchens & furniture"],
+      "description": "Pereettevõte, mis teeb köögimööbli, riidekapid, garderoobid ja vannitoamööbli eritellimusel: mõõtmine, projekt, valmistamine ja paigaldus. Oma töökoda Viimsis, töötame Tallinnas ja üle Eesti, tarne ka välismaale.",
+      "url": "https://semarkitchens.com/",
+      "logo": "https://semarkitchens.com/img/logo-v-sage-288.png",
+      "image": ["https://semarkitchens.com/img/og.jpg", "https://semarkitchens.com/img/hero-1600.webp"],
+      "telephone": "+37255946489",
+      "email": "sergeiinstaller@gmail.com",
+      "contactPoint": [
+        {"@type": "ContactPoint", "contactType": "customer service", "telephone": "+37255946489", "availableLanguage": ["et"]},
+        {"@type": "ContactPoint", "contactType": "customer service", "telephone": "+37255549755", "availableLanguage": ["ru", "en"]}
+      ],
+      "foundingDate": "2023-02-15",
+      "identifier": {"@type": "PropertyValue", "propertyID": "registrikood", "value": "16677638"},
+      "address": {"@type": "PostalAddress", "streetAddress": "Rohuneeme tee 1", "addressLocality": "Viimsi", "postalCode": "74001", "addressRegion": "Harjumaa", "addressCountry": "EE"},
+      "hasMap": "https://www.google.com/maps/search/?api=1&query=Rohuneeme+tee+1%2C+Viimsi",
+      "areaServed": [{"@type": "City", "name": "Tallinn"}, {"@type": "AdministrativeArea", "name": "Harjumaa"}, {"@type": "Country", "name": "Estonia"}],
+      "knowsLanguage": ["et", "ru", "en"],
+      "sameAs": ["https://www.instagram.com/semar_moobel/", "https://www.facebook.com/profile.php?id=61577612432670"]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://semarkitchens.com/#website",
+      "url": "https://semarkitchens.com/",
+      "name": "Semar kitchens",
+      "alternateName": "Semar kitchens OÜ",
+      "inLanguage": ["et", "ru", "en"],
+      "publisher": {"@id": "https://semarkitchens.com/#business"}
+    }
+  ]
 }
 </script>
 </head>
@@ -60,7 +88,7 @@
 
 <header class="hdr">
   <div class="hdr__in">
-    <a class="brand" href="#top"><picture><source media="(min-width: 600px)" srcset="img/logo-h-180.png 1x, img/logo-h-360.png 2x, img/logo-h-540.png 3x" width="180" height="73"><img class="logo" src="img/mark-48.png" srcset="img/mark-48.png 1x, img/mark-96.png 2x, img/mark-144.png 3x" width="45" height="48" alt="Semar kitchens &amp; furniture"></picture></a>
+    <a class="brand" href="#top"><picture><source media="(min-width: 600px)" srcset="/img/logo-h-180.png 1x, /img/logo-h-360.png 2x, /img/logo-h-540.png 3x" width="180" height="73"><img class="logo" src="/img/mark-48.png" srcset="/img/mark-48.png 1x, /img/mark-96.png 2x, /img/mark-144.png 3x" width="45" height="48" alt="Semar kitchens &amp; furniture"></picture></a>
     <nav class="nav" aria-label="Peamenüü" data-ta="aria-label:navAria">
       <a href="#teenused" data-t="navServ">Teenused</a>
       <a href="#tood" data-t="navWork">Meie tööd</a>
@@ -98,7 +126,7 @@
   <p class="hero__where"><span class="tick" aria-hidden="true"></span><span data-t="heroWhere">Eesti</span></p>
   <h1 id="h1" data-t="h1">Köögid ja mööbel eritellimusel</h1>
   <figure class="hero__photo">
-    <img src="img/hero-1200.webp" srcset="img/hero-800.webp 800w, img/hero-1200.webp 1200w, img/hero-1600.webp 1600w" sizes="(min-width: 960px) 58vw, 100vw" width="1600" height="1660" fetchpriority="high"
+    <img src="/img/hero-1200.webp" srcset="/img/hero-800.webp 800w, /img/hero-1200.webp 1200w, /img/hero-1600.webp 1600w" sizes="(min-width: 960px) 58vw, 100vw" width="1600" height="1660" fetchpriority="high"
       alt="Nurgaköök rohekate fassaadide, tumedas puidutoonis kõrgete kappide ja kuldsete käepidemetega" data-ta="alt:heroAlt">
   </figure>
   <div class="hero__cta">
@@ -115,27 +143,27 @@
     <div class="sec__head">
       <p class="sec__no" aria-hidden="true">01</p>
       <h2 id="serv-h" data-t="servH">Teenused</h2>
-      <p class="sec__intro" data-t="servIntro">Valmistame köögid ja mööbli eritellimusel üle Eesti. Võimalik on ka tarne välismaale.</p>
+      <p class="sec__intro" data-t="servIntro">Valmistame köögid ja mööbli eritellimusel Tallinnas ja üle Eesti. Võimalik on ka tarne välismaale.</p>
     </div>
     <ol class="fronts">
       <li class="front" data-goto="tab-koogid">
-        <img src="img/s-kook-640.webp" srcset="img/s-kook-320.webp 320w, img/s-kook-640.webp 640w" sizes="(min-width: 1100px) 19vw, (min-width: 640px) 180px, 112px" width="640" height="800" loading="lazy" alt="Terrakotatoonis köögikapid ja sahtlid, tume tööpind" data-ta="alt:s1alt">
+        <img src="/img/s-kook-640.webp" srcset="/img/s-kook-320.webp 320w, /img/s-kook-640.webp 640w" sizes="(min-width: 1100px) 19vw, (min-width: 640px) 180px, 112px" width="640" height="800" loading="lazy" alt="Terrakotatoonis köögikapid ja sahtlid, tume tööpind" data-ta="alt:s1alt">
         <div class="front__txt"><span class="front__handle" aria-hidden="true"></span><h3 data-t="s1h">Köögimööbel</h3><p data-t="s1p">Valmistame köögi Teie ruumi mõõtude järgi ja paigaldame selle. Fassaadid reguleerime nii, et vahed on ühtlased.</p></div>
       </li>
       <li class="front" data-goto="tab-koogid">
-        <img src="img/s-pind-640.webp" srcset="img/s-pind-320.webp 320w, img/s-pind-640.webp 640w" sizes="(min-width: 1100px) 19vw, (min-width: 640px) 180px, 112px" width="640" height="800" loading="lazy" alt="Marmorimustriga tööpind, pliidiplaat ja valgustus ülemiste kappide all" data-ta="alt:s2alt">
+        <img src="/img/s-pind-640.webp" srcset="/img/s-pind-320.webp 320w, /img/s-pind-640.webp 640w" sizes="(min-width: 1100px) 19vw, (min-width: 640px) 180px, 112px" width="640" height="800" loading="lazy" alt="Marmorimustriga tööpind, pliidiplaat ja valgustus ülemiste kappide all" data-ta="alt:s2alt">
         <div class="front__txt"><span class="front__handle" aria-hidden="true"></span><h3 data-t="s2h">Tööpinnad</h3><p data-t="s2p">Paigaldame tööpinna ning sobitame sinna valamu ja pliidiplaadi.</p></div>
       </li>
       <li class="front" data-goto="tab-koogid">
-        <img src="img/s-tehnika-640.webp" srcset="img/s-tehnika-320.webp 320w, img/s-tehnika-640.webp 640w" sizes="(min-width: 1100px) 19vw, (min-width: 640px) 180px, 112px" width="640" height="800" loading="lazy" alt="Tumedad kõrged kapid, kuhu on paigaldatud mikrolaineahi ja ahi" data-ta="alt:s3alt">
+        <img src="/img/s-tehnika-640.webp" srcset="/img/s-tehnika-320.webp 320w, /img/s-tehnika-640.webp 640w" sizes="(min-width: 1100px) 19vw, (min-width: 640px) 180px, 112px" width="640" height="800" loading="lazy" alt="Tumedad kõrged kapid, kuhu on paigaldatud mikrolaineahi ja ahi" data-ta="alt:s3alt">
         <div class="front__txt"><span class="front__handle" aria-hidden="true"></span><h3 data-t="s3h">Kodumasinad kappidesse</h3><p data-t="s3p">Paigaldame ahju, mikrolaineahju, pliidiplaadi ja õhupuhasti kappidesse ja tööpinda.</p></div>
       </li>
       <li class="front" data-goto="tab-kapid">
-        <img src="img/s-kapid-640.webp" srcset="img/s-kapid-320.webp 320w, img/s-kapid-640.webp 640w" sizes="(min-width: 1100px) 19vw, (min-width: 640px) 180px, 112px" width="640" height="800" loading="lazy" alt="Ümara otsaga riidekapp magamistoas" data-ta="alt:s4alt">
+        <img src="/img/s-kapid-640.webp" srcset="/img/s-kapid-320.webp 320w, /img/s-kapid-640.webp 640w" sizes="(min-width: 1100px) 19vw, (min-width: 640px) 180px, 112px" width="640" height="800" loading="lazy" alt="Ümara otsaga riidekapp magamistoas" data-ta="alt:s4alt">
         <div class="front__txt"><span class="front__handle" aria-hidden="true"></span><h3 data-t="s4h">Riidekapid ja garderoobid</h3><p data-t="s4p">Valmistame need ruumi mõõtude järgi, ka peegelustega ja ümara otsaga.</p></div>
       </li>
       <li class="front" data-goto="tab-vann">
-        <img src="img/s-vann-640.webp" srcset="img/s-vann-320.webp 320w, img/s-vann-640.webp 640w" sizes="(min-width: 1100px) 19vw, (min-width: 640px) 180px, 112px" width="640" height="800" loading="lazy" alt="Puidutoonis kõrge kapp pesumasinale ja kuivatile ning valge valamuga kapp" data-ta="alt:s5alt">
+        <img src="/img/s-vann-640.webp" srcset="/img/s-vann-320.webp 320w, /img/s-vann-640.webp 640w" sizes="(min-width: 1100px) 19vw, (min-width: 640px) 180px, 112px" width="640" height="800" loading="lazy" alt="Puidutoonis kõrge kapp pesumasinale ja kuivatile ning valge valamuga kapp" data-ta="alt:s5alt">
         <div class="front__txt"><span class="front__handle" aria-hidden="true"></span><h3 data-t="s5h">Vannitoamööbel</h3><p data-t="s5p">Valmistame ja paigaldame valamukapid ning kõrge kapi pesumasinale ja kuivatile.</p></div>
       </li>
     </ol>
@@ -168,7 +196,7 @@
            1. Copy the client's photo to client_photos/ (next to site/).
            2. From the semar folder: python -X utf8 _work/build_img.py --one client_photos/<file>.jpg w22   (next free number: w22, w23 ...)
               writes img/w22-900.webp and img/w22-1600.webp (EXIF rotation applied, metadata dropped, each WebP under 250 KB) and prints the 900 size.
-           3. Paste an <li> into that category's list, copied from a tile below: data-full="img/w22-1600.webp", src/srcset with w22-900 and w22-1600,
+           3. Paste an <li> into that category's list, copied from a tile below: data-full="/img/w22-1600.webp", src/srcset with w22-900 and w22-1600,
               width/height = the printed 900 size, Estonian alt, data-ta="alt:w22"; pick tile sizes from the table above.
            4. In js/main.js add w22: '...' to RU and EN (the alt text in Russian and English). -->
     <div class="tabs" role="tablist" aria-label="Tööde liigid" data-ta="aria-label:tabsAria">
@@ -180,46 +208,46 @@
 
     <div class="panel" role="tabpanel" id="p-koogid" aria-labelledby="tab-koogid">
       <ul class="grid">
-        <li class="tile"><button type="button" class="tile__b" data-full="img/w07-1600.webp"><img src="img/w07-900.webp" srcset="img/w07-900.webp 675w, img/w07-1600.webp 1200w" sizes="(min-width: 960px) 23vw, 50vw" width="675" height="900" loading="lazy" alt="Sirge köök: heledad rohekashallid ülemised kapid valgustusega, tumedamad rohekashallid alumised kapid ja marmorimustriga tööpind" data-ta="alt:w07"></button></li>
-        <li class="tile"><button type="button" class="tile__b" data-full="img/w23-1600.webp"><img src="img/w23-900.webp" srcset="img/w23-900.webp 675w, img/w23-1600.webp 1200w" sizes="(min-width: 960px) 23vw, 50vw" width="675" height="900" loading="lazy" alt="Sama köök avatud uste ja sahtlitega: riiulid ülemistes kappides, nõudepesumasin, ahi ja sügavad sahtlid" data-ta="alt:w23"></button></li>
-        <li class="tile tile--l"><button type="button" class="tile__b" data-full="img/w10-1600.webp"><img src="img/w10-900.webp" srcset="img/w10-900.webp 900w, img/w10-1600.webp 1600w" sizes="(min-width: 960px) 46vw, 100vw" width="900" height="711" loading="lazy" alt="Nurgaköök rohekate fassaadide, tumedas puidutoonis kõrgete kappide ja kuldsete käepidemetega" data-ta="alt:w10"></button></li>
-        <li class="tile tile--l"><button type="button" class="tile__b" data-full="img/w11-1600.webp"><img src="img/w11-900.webp" srcset="img/w11-900.webp 900w, img/w11-1600.webp 1340w" sizes="(min-width: 960px) 46vw, 100vw" width="900" height="711" loading="lazy" alt="Helebeež köök puidutoonis tööpinna ja seinapaneeliga, ees puidust laud" data-ta="alt:w11"></button></li>
-        <li class="tile"><button type="button" class="tile__b" data-full="img/w05-1600.webp"><img src="img/w05-900.webp" srcset="img/w05-900.webp 675w, img/w05-1600.webp 1200w" sizes="(min-width: 960px) 23vw, 50vw" width="675" height="900" loading="lazy" alt="Terrakotatoonis köök tumeda tööpinna ja musta valamuga" data-ta="alt:w05"></button></li>
-        <li class="tile"><button type="button" class="tile__b" data-full="img/w22-1600.webp"><img src="img/w22-900.webp" srcset="img/w22-900.webp 675w, img/w22-1600.webp 1200w" sizes="(min-width: 960px) 23vw, 50vw" width="675" height="900" loading="lazy" alt="Sama terrakotaköök teiselt seinalt: valged kõrged ja ülemised kapid, tume tööpind ja must valamu" data-ta="alt:w22"></button></li>
-        <li class="tile"><button type="button" class="tile__b" data-full="img/w09-1600.webp"><img src="img/w09-900.webp" srcset="img/w09-900.webp 900w, img/w09-1600.webp 1600w" sizes="(min-width: 960px) 23vw, 50vw" width="619" height="900" loading="lazy" alt="Tumedad kõrged kapid mikrolaineahju ja ahjuga, kõrval valged alumised kapid tumeda tööpinnaga" data-ta="alt:w09"></button></li>
-        <li class="tile"><button type="button" class="tile__b" data-full="img/w12-1600.webp"><img src="img/w12-900.webp" srcset="img/w12-900.webp 767w, img/w12-1600.webp 960w" sizes="(min-width: 960px) 23vw, 50vw" width="767" height="900" loading="lazy" alt="Väike valge köök tumedate käepidemete ja helehalli tööpinnaga" data-ta="alt:w12"></button></li>
-        <li class="tile tile--l"><button type="button" class="tile__b" data-full="img/w24-1600.webp"><img src="img/w24-900.webp" srcset="img/w24-900.webp 900w, img/w24-1600.webp 1600w" sizes="(min-width: 960px) 46vw, 100vw" width="900" height="758" loading="lazy" style="object-position: 50% 15%" alt="Helehall köögirida pronksitoonis käepidemetega: valamu, sahtlid ja hele tööpind" data-ta="alt:w24"></button></li>
+        <li class="tile"><button type="button" class="tile__b" data-full="/img/w07-1600.webp"><img src="/img/w07-900.webp" srcset="/img/w07-900.webp 675w, /img/w07-1600.webp 1200w" sizes="(min-width: 960px) 23vw, 50vw" width="675" height="900" loading="lazy" alt="Sirge köök: heledad rohekashallid ülemised kapid valgustusega, tumedamad rohekashallid alumised kapid ja marmorimustriga tööpind" data-ta="alt:w07"></button></li>
+        <li class="tile"><button type="button" class="tile__b" data-full="/img/w23-1600.webp"><img src="/img/w23-900.webp" srcset="/img/w23-900.webp 675w, /img/w23-1600.webp 1200w" sizes="(min-width: 960px) 23vw, 50vw" width="675" height="900" loading="lazy" alt="Sama köök avatud uste ja sahtlitega: riiulid ülemistes kappides, nõudepesumasin, ahi ja sügavad sahtlid" data-ta="alt:w23"></button></li>
+        <li class="tile tile--l"><button type="button" class="tile__b" data-full="/img/w10-1600.webp"><img src="/img/w10-900.webp" srcset="/img/w10-900.webp 900w, /img/w10-1600.webp 1600w" sizes="(min-width: 960px) 46vw, 100vw" width="900" height="711" loading="lazy" alt="Nurgaköök rohekate fassaadide, tumedas puidutoonis kõrgete kappide ja kuldsete käepidemetega" data-ta="alt:w10"></button></li>
+        <li class="tile tile--l"><button type="button" class="tile__b" data-full="/img/w11-1600.webp"><img src="/img/w11-900.webp" srcset="/img/w11-900.webp 900w, /img/w11-1600.webp 1340w" sizes="(min-width: 960px) 46vw, 100vw" width="900" height="711" loading="lazy" alt="Helebeež köök puidutoonis tööpinna ja seinapaneeliga, ees puidust laud" data-ta="alt:w11"></button></li>
+        <li class="tile"><button type="button" class="tile__b" data-full="/img/w05-1600.webp"><img src="/img/w05-900.webp" srcset="/img/w05-900.webp 675w, /img/w05-1600.webp 1200w" sizes="(min-width: 960px) 23vw, 50vw" width="675" height="900" loading="lazy" alt="Terrakotatoonis köök tumeda tööpinna ja musta valamuga" data-ta="alt:w05"></button></li>
+        <li class="tile"><button type="button" class="tile__b" data-full="/img/w22-1600.webp"><img src="/img/w22-900.webp" srcset="/img/w22-900.webp 675w, /img/w22-1600.webp 1200w" sizes="(min-width: 960px) 23vw, 50vw" width="675" height="900" loading="lazy" alt="Sama terrakotaköök teiselt seinalt: valged kõrged ja ülemised kapid, tume tööpind ja must valamu" data-ta="alt:w22"></button></li>
+        <li class="tile"><button type="button" class="tile__b" data-full="/img/w09-1600.webp"><img src="/img/w09-900.webp" srcset="/img/w09-900.webp 900w, /img/w09-1600.webp 1600w" sizes="(min-width: 960px) 23vw, 50vw" width="619" height="900" loading="lazy" alt="Tumedad kõrged kapid mikrolaineahju ja ahjuga, kõrval valged alumised kapid tumeda tööpinnaga" data-ta="alt:w09"></button></li>
+        <li class="tile"><button type="button" class="tile__b" data-full="/img/w12-1600.webp"><img src="/img/w12-900.webp" srcset="/img/w12-900.webp 767w, /img/w12-1600.webp 960w" sizes="(min-width: 960px) 23vw, 50vw" width="767" height="900" loading="lazy" alt="Väike valge köök tumedate käepidemete ja helehalli tööpinnaga" data-ta="alt:w12"></button></li>
+        <li class="tile tile--l"><button type="button" class="tile__b" data-full="/img/w24-1600.webp"><img src="/img/w24-900.webp" srcset="/img/w24-900.webp 900w, /img/w24-1600.webp 1600w" sizes="(min-width: 960px) 46vw, 100vw" width="900" height="758" loading="lazy" style="object-position: 50% 15%" alt="Helehall köögirida pronksitoonis käepidemetega: valamu, sahtlid ja hele tööpind" data-ta="alt:w24"></button></li>
       </ul>
     </div>
 
     <div class="panel" role="tabpanel" id="p-kapid" aria-labelledby="tab-kapid" hidden>
       <ul class="grid">
-        <li class="tile"><button type="button" class="tile__b" data-full="img/w02-1600.webp"><img src="img/w02-900.webp" srcset="img/w02-900.webp 900w, img/w02-1600.webp 1600w" sizes="(min-width: 960px) 23vw, 50vw" width="641" height="900" loading="lazy" alt="Ümara otsaga riidekapp magamistoas, kõrval lahtine uks garderoobi" data-ta="alt:w02"></button></li>
-        <li class="tile"><button type="button" class="tile__b" data-full="img/w14-1600.webp"><img src="img/w14-900.webp" srcset="img/w14-900.webp 551w, img/w14-1600.webp 980w" sizes="(min-width: 960px) 23vw, 50vw" width="551" height="900" loading="lazy" alt="Sinepikollane kapisein: ülemised kapid ja sahtlitega kummut ümara servaga" data-ta="alt:w14"></button></li>
-        <li class="tile tile--l"><button type="button" class="tile__b" data-full="img/w13-1600.webp"><img src="img/w13-900.webp" sizes="(min-width: 960px) 46vw, 100vw" width="806" height="883" loading="lazy" style="object-position: 50% 62%" alt="Valge raamfassaadidega riidekapisein pronksitoonis käepidemetega" data-ta="alt:w13"></button></li>
-        <li class="tile tile--l tile--tall"><button type="button" class="tile__b" data-full="img/w26-1600.webp"><img src="img/w26-900.webp" srcset="img/w26-900.webp 675w, img/w26-1600.webp 1200w" sizes="(min-width: 960px) 46vw, 100vw" width="675" height="900" loading="lazy" style="object-position: 50% 60%" alt="Esik: põrandast laeni peegel, lainelise reljeefiga seinapaneelid ja seinale kinnitatud puidutoonis konsool sahtliga" data-ta="alt:w26"></button></li>
-        <li class="tile"><button type="button" class="tile__b" data-full="img/w15-1600.webp"><img src="img/w15-900.webp" srcset="img/w15-900.webp 635w, img/w15-1600.webp 903w" sizes="(min-width: 960px) 23vw, 50vw" width="635" height="900" loading="lazy" alt="Kitsas esik, lakke ulatuv kahe uksega riidekapp pikkade käepidemetega" data-ta="alt:w15"></button></li>
-        <li class="tile"><button type="button" class="tile__b" data-full="img/w16-1600.webp"><img src="img/w16-900.webp" srcset="img/w16-900.webp 675w, img/w16-1600.webp 960w" sizes="(min-width: 960px) 23vw, 50vw" width="675" height="900" loading="lazy" alt="Avatud riidekapp: riiulid, riidelatid ja kaks sahtlit" data-ta="alt:w16"></button></li>
-        <li class="tile tile--l"><button type="button" class="tile__b" data-full="img/w01-1600.webp"><img src="img/w01-900.webp" srcset="img/w01-900.webp 900w, img/w01-1600.webp 1600w" sizes="(min-width: 960px) 46vw, 100vw" width="900" height="864" loading="lazy" style="object-position: 50% 42%" alt="Helebeež riidekapp kahe peegeluksega magamistoas" data-ta="alt:w01"></button></li>
+        <li class="tile"><button type="button" class="tile__b" data-full="/img/w02-1600.webp"><img src="/img/w02-900.webp" srcset="/img/w02-900.webp 900w, /img/w02-1600.webp 1600w" sizes="(min-width: 960px) 23vw, 50vw" width="641" height="900" loading="lazy" alt="Ümara otsaga riidekapp magamistoas, kõrval lahtine uks garderoobi" data-ta="alt:w02"></button></li>
+        <li class="tile"><button type="button" class="tile__b" data-full="/img/w14-1600.webp"><img src="/img/w14-900.webp" srcset="/img/w14-900.webp 551w, /img/w14-1600.webp 980w" sizes="(min-width: 960px) 23vw, 50vw" width="551" height="900" loading="lazy" alt="Sinepikollane kapisein: ülemised kapid ja sahtlitega kummut ümara servaga" data-ta="alt:w14"></button></li>
+        <li class="tile tile--l"><button type="button" class="tile__b" data-full="/img/w13-1600.webp"><img src="/img/w13-900.webp" sizes="(min-width: 960px) 46vw, 100vw" width="806" height="883" loading="lazy" style="object-position: 50% 62%" alt="Valge raamfassaadidega riidekapisein pronksitoonis käepidemetega" data-ta="alt:w13"></button></li>
+        <li class="tile tile--l tile--tall"><button type="button" class="tile__b" data-full="/img/w26-1600.webp"><img src="/img/w26-900.webp" srcset="/img/w26-900.webp 675w, /img/w26-1600.webp 1200w" sizes="(min-width: 960px) 46vw, 100vw" width="675" height="900" loading="lazy" style="object-position: 50% 60%" alt="Esik: põrandast laeni peegel, lainelise reljeefiga seinapaneelid ja seinale kinnitatud puidutoonis konsool sahtliga" data-ta="alt:w26"></button></li>
+        <li class="tile"><button type="button" class="tile__b" data-full="/img/w15-1600.webp"><img src="/img/w15-900.webp" srcset="/img/w15-900.webp 635w, /img/w15-1600.webp 903w" sizes="(min-width: 960px) 23vw, 50vw" width="635" height="900" loading="lazy" alt="Kitsas esik, lakke ulatuv kahe uksega riidekapp pikkade käepidemetega" data-ta="alt:w15"></button></li>
+        <li class="tile"><button type="button" class="tile__b" data-full="/img/w16-1600.webp"><img src="/img/w16-900.webp" srcset="/img/w16-900.webp 675w, /img/w16-1600.webp 960w" sizes="(min-width: 960px) 23vw, 50vw" width="675" height="900" loading="lazy" alt="Avatud riidekapp: riiulid, riidelatid ja kaks sahtlit" data-ta="alt:w16"></button></li>
+        <li class="tile tile--l"><button type="button" class="tile__b" data-full="/img/w01-1600.webp"><img src="/img/w01-900.webp" srcset="/img/w01-900.webp 900w, /img/w01-1600.webp 1600w" sizes="(min-width: 960px) 46vw, 100vw" width="900" height="864" loading="lazy" style="object-position: 50% 42%" alt="Helebeež riidekapp kahe peegeluksega magamistoas" data-ta="alt:w01"></button></li>
       </ul>
     </div>
 
     <div class="panel" role="tabpanel" id="p-vann" aria-labelledby="tab-vann" hidden>
       <ul class="grid">
-        <li class="tile tile--tall"><button type="button" class="tile__b" data-full="img/w08-1600.webp"><img src="img/w08-900.webp" srcset="img/w08-900.webp 900w, img/w08-1600.webp 1600w" sizes="(min-width: 960px) 46vw, 50vw" width="635" height="900" loading="lazy" alt="Vannituba: puidutoonis kõrge kapp pesumasinale ja kuivatile ning seinale kinnitatud valamukapp" data-ta="alt:w08"></button></li>
-        <li class="tile tile--tall"><button type="button" class="tile__b" data-full="img/w25-1600.webp"><img src="img/w25-900.webp" srcset="img/w25-900.webp 713w, img/w25-1600.webp 1268w" sizes="(min-width: 960px) 46vw, 50vw" width="713" height="900" loading="lazy" alt="Vannituba: tumedas puidutoonis kõrge kapp pesumasinale ja kuivatile, lahtine riiul ja tume valamukapp" data-ta="alt:w25"></button></li>
-        <li class="tile tile--l"><button type="button" class="tile__b" data-full="img/w03-1600.webp"><img src="img/w03-900.webp" srcset="img/w03-900.webp 900w, img/w03-1600.webp 1600w" sizes="(min-width: 960px) 46vw, 100vw" width="900" height="750" loading="lazy" alt="Helesinine valamukapp kahe valamu ja kuldsete käepidemetega" data-ta="alt:w03"></button></li>
-        <li class="tile"><button type="button" class="tile__b" data-full="img/w17-1600.webp"><img src="img/w17-900.webp" srcset="img/w17-900.webp 718w, img/w17-1600.webp 960w" sizes="(min-width: 960px) 23vw, 50vw" width="718" height="900" loading="lazy" alt="Valge seinale kinnitatud valamukapp kahe sahtli ja tumedate käepidemetega" data-ta="alt:w17"></button></li>
-        <li class="tile"><button type="button" class="tile__b" data-full="img/w04-1600.webp"><img src="img/w04-900.webp" srcset="img/w04-900.webp 900w, img/w04-1600.webp 1600w" sizes="(min-width: 960px) 23vw, 50vw" width="900" height="678" loading="lazy" style="object-position: 56% 50%" alt="Hall seinale kinnitatud valamukapp lahtiste riiulitega" data-ta="alt:w04"></button></li>
+        <li class="tile tile--tall"><button type="button" class="tile__b" data-full="/img/w08-1600.webp"><img src="/img/w08-900.webp" srcset="/img/w08-900.webp 900w, /img/w08-1600.webp 1600w" sizes="(min-width: 960px) 46vw, 50vw" width="635" height="900" loading="lazy" alt="Vannituba: puidutoonis kõrge kapp pesumasinale ja kuivatile ning seinale kinnitatud valamukapp" data-ta="alt:w08"></button></li>
+        <li class="tile tile--tall"><button type="button" class="tile__b" data-full="/img/w25-1600.webp"><img src="/img/w25-900.webp" srcset="/img/w25-900.webp 713w, /img/w25-1600.webp 1268w" sizes="(min-width: 960px) 46vw, 50vw" width="713" height="900" loading="lazy" alt="Vannituba: tumedas puidutoonis kõrge kapp pesumasinale ja kuivatile, lahtine riiul ja tume valamukapp" data-ta="alt:w25"></button></li>
+        <li class="tile tile--l"><button type="button" class="tile__b" data-full="/img/w03-1600.webp"><img src="/img/w03-900.webp" srcset="/img/w03-900.webp 900w, /img/w03-1600.webp 1600w" sizes="(min-width: 960px) 46vw, 100vw" width="900" height="750" loading="lazy" alt="Helesinine valamukapp kahe valamu ja kuldsete käepidemetega" data-ta="alt:w03"></button></li>
+        <li class="tile"><button type="button" class="tile__b" data-full="/img/w17-1600.webp"><img src="/img/w17-900.webp" srcset="/img/w17-900.webp 718w, /img/w17-1600.webp 960w" sizes="(min-width: 960px) 23vw, 50vw" width="718" height="900" loading="lazy" alt="Valge seinale kinnitatud valamukapp kahe sahtli ja tumedate käepidemetega" data-ta="alt:w17"></button></li>
+        <li class="tile"><button type="button" class="tile__b" data-full="/img/w04-1600.webp"><img src="/img/w04-900.webp" srcset="/img/w04-900.webp 900w, /img/w04-1600.webp 1600w" sizes="(min-width: 960px) 23vw, 50vw" width="900" height="678" loading="lazy" style="object-position: 56% 50%" alt="Hall seinale kinnitatud valamukapp lahtiste riiulitega" data-ta="alt:w04"></button></li>
       </ul>
     </div>
 
     <div class="panel" role="tabpanel" id="p-oues" aria-labelledby="tab-oues" hidden>
       <ul class="grid">
-        <li class="tile tile--l tile--tall"><button type="button" class="tile__b" data-full="img/w18-1600.webp"><img src="img/w18-900.webp" srcset="img/w18-900.webp 675w, img/w18-1600.webp 960w" sizes="(min-width: 960px) 46vw, 100vw" width="675" height="900" loading="lazy" style="object-position: 50% 64%" alt="Väliköök aias: avatav katus valgustusega, grill, valamu ja hallid kapid puitterrassil" data-ta="alt:w18"></button></li>
-        <li class="tile"><button type="button" class="tile__b" data-full="img/w19-1600.webp"><img src="img/w19-900.webp" srcset="img/w19-900.webp 675w, img/w19-1600.webp 960w" sizes="(min-width: 960px) 23vw, 50vw" width="675" height="900" loading="lazy" alt="Sama väliköök lähemalt: grill, sahtlid ja puitvoodriga seinad" data-ta="alt:w19"></button></li>
-        <li class="tile"><button type="button" class="tile__b" data-full="img/w20-1600.webp"><img src="img/w20-900.webp" sizes="(min-width: 960px) 23vw, 50vw" width="701" height="896" loading="lazy" alt="Väliköök õhtuvalguses: grill, õhupuhasti, valamu ja tumehallid kapid katuse all" data-ta="alt:w20"></button></li>
-        <li class="tile tile--l"><button type="button" class="tile__b" data-full="img/w21-1600.webp"><img src="img/w21-900.webp" srcset="img/w21-900.webp 900w, img/w21-1600.webp 1280w" sizes="(min-width: 960px) 46vw, 100vw" width="900" height="675" loading="lazy" alt="Väliköök, ees ettevõtte omanikud" data-ta="alt:w21"></button></li>
+        <li class="tile tile--l tile--tall"><button type="button" class="tile__b" data-full="/img/w18-1600.webp"><img src="/img/w18-900.webp" srcset="/img/w18-900.webp 675w, /img/w18-1600.webp 960w" sizes="(min-width: 960px) 46vw, 100vw" width="675" height="900" loading="lazy" style="object-position: 50% 64%" alt="Väliköök aias: avatav katus valgustusega, grill, valamu ja hallid kapid puitterrassil" data-ta="alt:w18"></button></li>
+        <li class="tile"><button type="button" class="tile__b" data-full="/img/w19-1600.webp"><img src="/img/w19-900.webp" srcset="/img/w19-900.webp 675w, /img/w19-1600.webp 960w" sizes="(min-width: 960px) 23vw, 50vw" width="675" height="900" loading="lazy" alt="Sama väliköök lähemalt: grill, sahtlid ja puitvoodriga seinad" data-ta="alt:w19"></button></li>
+        <li class="tile"><button type="button" class="tile__b" data-full="/img/w20-1600.webp"><img src="/img/w20-900.webp" sizes="(min-width: 960px) 23vw, 50vw" width="701" height="896" loading="lazy" alt="Väliköök õhtuvalguses: grill, õhupuhasti, valamu ja tumehallid kapid katuse all" data-ta="alt:w20"></button></li>
+        <li class="tile tile--l"><button type="button" class="tile__b" data-full="/img/w21-1600.webp"><img src="/img/w21-900.webp" srcset="/img/w21-900.webp 900w, /img/w21-1600.webp 1280w" sizes="(min-width: 960px) 46vw, 100vw" width="900" height="675" loading="lazy" alt="Väliköök, ees ettevõtte omanikud" data-ta="alt:w21"></button></li>
       </ul>
     </div>
   </div>
@@ -257,13 +285,13 @@
     </div>
     <div class="about__txt">
       <p class="about__lead" data-t="aboutP1">Semar kitchens on Sergei ja Marina pereettevõte. Asutasime selle 2023. aastal ja teeme köögid ning mööbli oma töökojas Viimsis, Rohuneeme tee 1.</p>
-      <p data-t="aboutP2">Iga kapp ja fassaad valmib Teie ruumi mõõtude järgi. Mõõdame, projekteerime, valmistame ja paigaldame ise. Töötame üle Eesti.</p>
+      <p data-t="aboutP2">Iga kapp ja fassaad valmib Teie ruumi mõõtude järgi. Mõõdame, projekteerime, valmistame ja paigaldame ise. Töötame Tallinnas, Harjumaal ja üle Eesti.</p>
     </div>
-    <!-- WORKSHOP PHOTO (töökoda): his photo 23-04-46 (7) from Telegram 03.11 (black and white as he sent it), img/meist-900/1600.webp.
+    <!-- WORKSHOP PHOTO (töökoda): his photo 23-04-46 (7) from Telegram 03.11 (black and white as he sent it), /img/meist-900/1600.webp.
          To swap it: copy the new photo to client_photos/, then from the semar folder: python -X utf8 _work/build_img.py --one client_photos/<file>.jpg meist
          (overwrites img/meist-900.webp + img/meist-1600.webp, prints the 900 size) and set width/height below; change the alt here and aboutPhotoAlt in js/main.js.
          Without a photo: put hidden back on the figure and empty it; the section then shows heading left, text right. Never a stock photo here. -->
-    <figure class="about__photo"><img src="img/meist-900.webp" srcset="img/meist-900.webp 900w, img/meist-1600.webp 1280w" sizes="(min-width: 960px) 54vw, 100vw"
+    <figure class="about__photo"><img src="/img/meist-900.webp" srcset="/img/meist-900.webp 900w, /img/meist-1600.webp 1280w" sizes="(min-width: 960px) 54vw, 100vw"
       width="900" height="675" loading="lazy" alt="Töökojas: detaili saagimine formaatsaega" data-ta="alt:aboutPhotoAlt"></figure>
   </div>
 </section>
@@ -369,7 +397,7 @@
 <footer class="ftr" id="jalus">
   <div class="wrap ftr__in">
     <div class="ftr__brand">
-      <a class="brand" href="#top"><img class="ftr__logo" src="img/logo-v-sage-96.png" srcset="img/logo-v-sage-96.png 1x, img/logo-v-sage-192.png 2x, img/logo-v-sage-288.png 3x" width="96" height="142" alt="Semar kitchens &amp; furniture" loading="lazy"></a>
+      <a class="brand" href="#top"><img class="ftr__logo" src="/img/logo-v-sage-96.png" srcset="/img/logo-v-sage-96.png 1x, /img/logo-v-sage-192.png 2x, /img/logo-v-sage-288.png 3x" width="96" height="142" alt="Semar kitchens &amp; furniture" loading="lazy"></a>
     </div>
     <nav class="ftr__nav" aria-label="Jaluse menüü" data-ta="aria-label:ftrNavAria">
       <a href="#teenused" data-t="navServ">Teenused</a>
@@ -423,6 +451,6 @@
   <button type="button" class="lb__btn lb__next" id="lb-next" aria-label="Järgmine foto" data-ta="aria-label:lbNext"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
 </div>
 
-<script src="js/main.js"></script>
+<script src="/js/main.js"></script>
 </body>
 </html>
