@@ -59,6 +59,10 @@
     w27: 'Г-образная кухня со светлыми фасадами под дуб, серой столешницей и стеновой панелью под камень, подсветка под верхними шкафами',
     w28: 'Угол той же кухни: варочная панель, мойка и высокие верхние шкафы светлого дуба',
     w29: 'Та же кухня ближе: угол с мойкой, духовка и серая столешница под камень',
+    // 16.11 «Uusim töö» block
+    featLabel: 'Новая работа', featH: 'Светлый дуб и серый камень',
+    featP: 'Г-образная кухня с фасадами без ручек в тоне светлого дуба. Столешница и стеновая панель с одинаковым серым рисунком камня, под верхними шкафами LED-подсветка.',
+    featAsk: 'Хотите такую же кухню?',
     motto1a: 'Каждый дом особенный.', motto1b: 'Каждый проект уникальный.', motto2: 'Сделано так, как вы хотели.',
     howH: 'Как мы работаем', howIntro: 'Четыре шага от замера до готовой мебели.',
     st1h: 'Замер', st1p: 'Приезжаем и измеряем помещение. Обсуждаем, что вам нужно.',
@@ -134,6 +138,10 @@
     w27: 'L-shaped kitchen with light oak fronts, a grey stone-look worktop and splashback, lighting under the wall cabinets',
     w28: 'Corner of the same kitchen: hob, sink and tall wall cabinets in light oak',
     w29: 'The same kitchen up close: sink corner, oven and a grey stone-look worktop',
+    // 16.11 «Uusim töö» block
+    featLabel: 'Latest project', featH: 'Light oak and grey stone',
+    featP: 'An L-shaped kitchen with handleless fronts in a light oak tone. The worktop and splashback share the same grey stone pattern, with LED lighting under the wall cabinets.',
+    featAsk: 'Want a kitchen like this?',
     motto1a: 'Every home is special.', motto1b: 'Every project is unique.', motto2: 'Made the way you wanted.',
     howH: 'How we work', howIntro: 'Four steps from measuring to finished furniture.',
     st1h: 'Measuring', st1p: 'We come over and measure the room. We talk through what you need.',
@@ -351,7 +359,7 @@
     lbCount.textContent = (cur + 1) + ' / ' + order.length;
   }
   function openLb(btn) {
-    order = visualOrder(Array.prototype.slice.call((btn.closest('.panel') || doc).querySelectorAll('.tile__b'))); opener = btn; lbOpen = true;
+    order = visualOrder(Array.prototype.slice.call((btn.closest('.panel, .feat') || doc).querySelectorAll('.tile__b'))); opener = btn; lbOpen = true;
     showPhoto(order.indexOf(btn));
     lb.hidden = false; root.style.overflow = 'hidden';
     doc.getElementById('lb-close').focus();

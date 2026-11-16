@@ -177,6 +177,21 @@
       <h2 id="work-h" data-t="workH">Meie tööd</h2>
       <p class="sec__intro" data-t="workIntro">Kõik fotod on meie objektidelt. Vajutage fotole, et seda suurelt näha.</p>
     </div>
+    <!-- 16.11 «Uusim töö»: the newest kitchen big (w27 wide + w28/w29), text from what the photos show (no invented facts), CTA to the form.
+         Photos open the lightbox within this block (.feat = its own group). To feature another job: swap the 3 images + featH/featP (ET here, RU/EN in main.js). -->
+    <article class="feat" aria-labelledby="feat-h">
+      <div class="feat__text">
+        <p class="feat__label" data-t="featLabel">Uusim töö</p>
+        <h3 class="feat__h" id="feat-h" data-t="featH">Hele tamm ja hall kivi</h3>
+        <p class="feat__p" data-t="featP">L-kujuline köök käepidemeteta fassaadidega heledas tammetoonis. Tööpind ja seinapaneel on sama halli kivimustriga, ülemiste kappide all on LED-valgustus.</p>
+        <p class="feat__ask"><span data-t="featAsk">Soovite sarnast kööki?</span> <a class="btn btn--cta btn--sm" href="#paring" data-t="cta">Küsige pakkumist!</a></p>
+      </div>
+      <div class="feat__pics">
+        <button type="button" class="tile__b feat__b feat__b--main" data-full="/img/w27-1600.webp"><img src="/img/w27-900.webp" srcset="/img/w27-900.webp 900w, /img/w27-1600.webp 1600w" sizes="(min-width: 960px) 44vw, 100vw" width="900" height="675" loading="lazy" alt="L-kujuline köök heledas tammetoonis fassaadidega, halli kivimustriga tööpinna ja seinapaneeliga, valgustus ülemiste kappide all" data-ta="alt:w27"></button>
+        <button type="button" class="tile__b feat__b" data-full="/img/w28-1600.webp"><img src="/img/w28-900.webp" srcset="/img/w28-900.webp 704w, /img/w28-1600.webp 1252w" sizes="(min-width: 960px) 22vw, 50vw" width="704" height="900" loading="lazy" alt="Sama köögi nurk: pliidiplaat, valamu ja kõrged ülemised kapid heledas tammetoonis" data-ta="alt:w28"></button>
+        <button type="button" class="tile__b feat__b" data-full="/img/w29-1600.webp"><img src="/img/w29-900.webp" srcset="/img/w29-900.webp 626w, /img/w29-1600.webp 1114w" sizes="(min-width: 960px) 22vw, 50vw" width="626" height="900" loading="lazy" alt="Sama köök lähemalt: valamunurk, ahi ja hall kivimustriga tööpind" data-ta="alt:w29"></button>
+      </div>
+    </article>
     <!-- 04.11 (Sergei): photos sorted by category, one tab per category (WAI-ARIA tabs; main.js: arrows, Home, End).
          Photos w11-w21 are from his Telegram message of 03.11 (see EDITS_0411.md for what was used and what was left out).
          06.11: his photo files (jobs/semar_media/0611, _work/build_0611.py): new w22-w26; w04, w05, w07, w10, w11, w14 and the hero now come from his own edited files of the same shots.
@@ -208,10 +223,6 @@
 
     <div class="panel" role="tabpanel" id="p-koogid" aria-labelledby="tab-koogid">
       <ul class="grid">
-        <!-- 16.11 (Sergei, Telegram): new kitchen w27-w29 (_work/build_1611.py), block l + 2 plain first = newest work first -->
-        <li class="tile tile--l"><button type="button" class="tile__b" data-full="/img/w27-1600.webp"><img src="/img/w27-900.webp" srcset="/img/w27-900.webp 900w, /img/w27-1600.webp 1600w" sizes="(min-width: 960px) 46vw, 100vw" width="900" height="675" loading="lazy" alt="L-kujuline köök heledas tammetoonis fassaadidega, halli kivimustriga tööpinna ja seinapaneeliga, valgustus ülemiste kappide all" data-ta="alt:w27"></button></li>
-        <li class="tile"><button type="button" class="tile__b" data-full="/img/w28-1600.webp"><img src="/img/w28-900.webp" srcset="/img/w28-900.webp 704w, /img/w28-1600.webp 1252w" sizes="(min-width: 960px) 23vw, 50vw" width="704" height="900" loading="lazy" alt="Sama köögi nurk: pliidiplaat, valamu ja kõrged ülemised kapid heledas tammetoonis" data-ta="alt:w28"></button></li>
-        <li class="tile"><button type="button" class="tile__b" data-full="/img/w29-1600.webp"><img src="/img/w29-900.webp" srcset="/img/w29-900.webp 626w, /img/w29-1600.webp 1114w" sizes="(min-width: 960px) 23vw, 50vw" width="626" height="900" loading="lazy" alt="Sama köök lähemalt: valamunurk, ahi ja hall kivimustriga tööpind" data-ta="alt:w29"></button></li>
         <li class="tile"><button type="button" class="tile__b" data-full="/img/w07-1600.webp"><img src="/img/w07-900.webp" srcset="/img/w07-900.webp 675w, /img/w07-1600.webp 1200w" sizes="(min-width: 960px) 23vw, 50vw" width="675" height="900" loading="lazy" alt="Sirge köök: heledad rohekashallid ülemised kapid valgustusega, tumedamad rohekashallid alumised kapid ja marmorimustriga tööpind" data-ta="alt:w07"></button></li>
         <li class="tile"><button type="button" class="tile__b" data-full="/img/w23-1600.webp"><img src="/img/w23-900.webp" srcset="/img/w23-900.webp 675w, /img/w23-1600.webp 1200w" sizes="(min-width: 960px) 23vw, 50vw" width="675" height="900" loading="lazy" alt="Sama köök avatud uste ja sahtlitega: riiulid ülemistes kappides, nõudepesumasin, ahi ja sügavad sahtlid" data-ta="alt:w23"></button></li>
         <li class="tile tile--l"><button type="button" class="tile__b" data-full="/img/w10-1600.webp"><img src="/img/w10-900.webp" srcset="/img/w10-900.webp 900w, /img/w10-1600.webp 1600w" sizes="(min-width: 960px) 46vw, 100vw" width="900" height="711" loading="lazy" alt="Nurgaköök rohekate fassaadide, tumedas puidutoonis kõrgete kappide ja kuldsete käepidemetega" data-ta="alt:w10"></button></li>
@@ -221,6 +232,10 @@
         <li class="tile"><button type="button" class="tile__b" data-full="/img/w09-1600.webp"><img src="/img/w09-900.webp" srcset="/img/w09-900.webp 900w, /img/w09-1600.webp 1600w" sizes="(min-width: 960px) 23vw, 50vw" width="619" height="900" loading="lazy" alt="Tumedad kõrged kapid mikrolaineahju ja ahjuga, kõrval valged alumised kapid tumeda tööpinnaga" data-ta="alt:w09"></button></li>
         <li class="tile"><button type="button" class="tile__b" data-full="/img/w12-1600.webp"><img src="/img/w12-900.webp" srcset="/img/w12-900.webp 767w, /img/w12-1600.webp 960w" sizes="(min-width: 960px) 23vw, 50vw" width="767" height="900" loading="lazy" alt="Väike valge köök tumedate käepidemete ja helehalli tööpinnaga" data-ta="alt:w12"></button></li>
         <li class="tile tile--l"><button type="button" class="tile__b" data-full="/img/w24-1600.webp"><img src="/img/w24-900.webp" srcset="/img/w24-900.webp 900w, /img/w24-1600.webp 1600w" sizes="(min-width: 960px) 46vw, 100vw" width="900" height="758" loading="lazy" style="object-position: 50% 15%" alt="Helehall köögirida pronksitoonis käepidemetega: valamu, sahtlid ja hele tööpind" data-ta="alt:w24"></button></li>
+        <!-- 16.11 (Sergei, Telegram): new kitchen w27-w29 (_work/build_1611.py); shown big in the «Uusim töö» block above, here at the end -->
+        <li class="tile tile--l"><button type="button" class="tile__b" data-full="/img/w27-1600.webp"><img src="/img/w27-900.webp" srcset="/img/w27-900.webp 900w, /img/w27-1600.webp 1600w" sizes="(min-width: 960px) 46vw, 100vw" width="900" height="675" loading="lazy" alt="L-kujuline köök heledas tammetoonis fassaadidega, halli kivimustriga tööpinna ja seinapaneeliga, valgustus ülemiste kappide all" data-ta="alt:w27"></button></li>
+        <li class="tile"><button type="button" class="tile__b" data-full="/img/w28-1600.webp"><img src="/img/w28-900.webp" srcset="/img/w28-900.webp 704w, /img/w28-1600.webp 1252w" sizes="(min-width: 960px) 23vw, 50vw" width="704" height="900" loading="lazy" alt="Sama köögi nurk: pliidiplaat, valamu ja kõrged ülemised kapid heledas tammetoonis" data-ta="alt:w28"></button></li>
+        <li class="tile"><button type="button" class="tile__b" data-full="/img/w29-1600.webp"><img src="/img/w29-900.webp" srcset="/img/w29-900.webp 626w, /img/w29-1600.webp 1114w" sizes="(min-width: 960px) 23vw, 50vw" width="626" height="900" loading="lazy" alt="Sama köök lähemalt: valamunurk, ahi ja hall kivimustriga tööpind" data-ta="alt:w29"></button></li>
       </ul>
     </div>
 

@@ -460,3 +460,32 @@ main:focus { outline: none; }
 .front--go { cursor: pointer; }
 .front--go:hover { border-color: currentColor; }
 .front--go:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+
+/* 16.11 «Uusim töö»: newest job big at the top of «Meie tööd» (dark section). Phones: text, wide photo, 2 portraits in a pair.
+   Desktop: text column left (4/12), photos right: wide photo over the full height + 2 portraits stacked as one column pair. */
+.feat { display: grid; gap: 20px; margin: 0 0 48px; padding-bottom: 40px; border-bottom: 1px solid rgba(244, 238, 224, .16); }
+.feat__label { font: 700 13px/1 var(--text); letter-spacing: .16em; text-transform: uppercase; color: var(--brass); }
+.feat__h { margin-top: 12px; font: 500 clamp(1.75rem, 1.2rem + 1.9vw, 2.75rem)/1.1 var(--display); color: var(--cream); letter-spacing: -.01em; }
+.feat__p { margin-top: 14px; max-width: 40ch; color: #cfc8b9; font-size: 18px; line-height: 1.55; }
+.feat__ask { margin-top: 22px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; color: var(--cream); font-size: 17px; }
+.feat__pics { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.feat__b { display: block; width: 100%; padding: 0; border: 0; background: #2f2d29; cursor: zoom-in; overflow: hidden; border-radius: 2px; }
+.feat__b img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .6s var(--ease); }
+.feat__b:hover img { transform: scale(1.025); }
+.feat__b--main { grid-column: 1 / -1; aspect-ratio: 4 / 3; }
+@media (max-width: 959px) {   /* phones: label + title, then the photos, then the text and the button */
+  .feat { gap: 0; }
+  .feat__text { display: contents; }
+  .feat__label { order: 1; } .feat__h { order: 2; margin-top: 10px; }
+  .feat__pics { order: 3; margin-top: 20px; }
+  .feat__p { order: 4; margin-top: 18px; } .feat__ask { order: 5; margin-top: 18px; }
+}
+.feat__b:not(.feat__b--main) { aspect-ratio: 3 / 4; }
+@media (min-width: 960px) {
+  .feat { grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); column-gap: clamp(32px, 4vw, 64px); align-items: end; margin-bottom: 64px; padding-bottom: 56px; }
+  .feat__text { padding-bottom: 6px; }
+  .feat__pics { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); grid-template-rows: 1fr 1fr; height: clamp(440px, 40vw, 620px); }
+  .feat__b--main { grid-column: 1; grid-row: 1 / 3; aspect-ratio: auto; }
+  .feat__b:not(.feat__b--main) { aspect-ratio: auto; }
+}
+@media (prefers-reduced-motion: reduce) { .feat__b img { transition: none; } .feat__b:hover img { transform: none; } }
