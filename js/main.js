@@ -55,6 +55,10 @@
     w24: 'Светло-серый кухонный гарнитур с ручками бронзового цвета: мойка, ящики и светлая столешница',
     w25: 'Ванная: высокий шкаф в тёмном древесном тоне для стиральной и сушильной машины, открытая полка и тёмная тумба под раковину',
     w26: 'Прихожая: зеркало от пола до потолка, стеновые панели с волнистым рельефом и подвесная консоль в древесном тоне с ящиком',
+    // 16.11 new kitchen (Telegram)
+    w27: 'Г-образная кухня со светлыми фасадами под дуб, серой столешницей и стеновой панелью под камень, подсветка под верхними шкафами',
+    w28: 'Угол той же кухни: варочная панель, мойка и высокие верхние шкафы светлого дуба',
+    w29: 'Та же кухня ближе: угол с мойкой, духовка и серая столешница под камень',
     motto1a: 'Каждый дом особенный.', motto1b: 'Каждый проект уникальный.', motto2: 'Сделано так, как вы хотели.',
     howH: 'Как мы работаем', howIntro: 'Четыре шага от замера до готовой мебели.',
     st1h: 'Замер', st1p: 'Приезжаем и измеряем помещение. Обсуждаем, что вам нужно.',
@@ -126,6 +130,10 @@
     w24: 'Light grey kitchen run with bronze-tone handles: a sink, drawers and a light worktop',
     w25: 'Bathroom: a tall dark wood-tone cabinet for the washer and dryer, an open shelf and a dark vanity unit',
     w26: 'Hallway: a floor-to-ceiling mirror, wall panels with a wavy relief and a wall-mounted wood-tone console with a drawer',
+    // 16.11 new kitchen (Telegram)
+    w27: 'L-shaped kitchen with light oak fronts, a grey stone-look worktop and splashback, lighting under the wall cabinets',
+    w28: 'Corner of the same kitchen: hob, sink and tall wall cabinets in light oak',
+    w29: 'The same kitchen up close: sink corner, oven and a grey stone-look worktop',
     motto1a: 'Every home is special.', motto1b: 'Every project is unique.', motto2: 'Made the way you wanted.',
     howH: 'How we work', howIntro: 'Four steps from measuring to finished furniture.',
     st1h: 'Measuring', st1p: 'We come over and measure the room. We talk through what you need.',
