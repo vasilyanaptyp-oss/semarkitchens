@@ -230,6 +230,11 @@
   function t(k) { var d = DICT[lang]; return (d ? d[k] : ET[k]) || ET[k] || ''; }
   function setMeta(sel, val) { var m = doc.querySelector(sel); if (m) m.setAttribute('content', val); }
 
+  // 03.11 (Sergei): Estonian callers reach Marina, Russian and English callers Sergei; the other number is shown under the big one.
+  // 23.11: outside applyLang, so the site editor can change the numbers; telText = the links that show the number itself
+  var TEL = { et: ['+37255946489', '+372 5594 6489'], ru: ['+37255549755', '+372 5554 9755'], en: ['+37255549755', '+372 5554 9755'] };
+  var telText = Array.prototype.filter.call(doc.querySelectorAll('a[data-tel]'), function (a) { return /^\+372/.test(a.textContent.trim()); });
+
   function applyLang(l, save) {
     lang = (l === 'ru' || l === 'en') ? l : 'et';
     root.lang = lang;
@@ -251,19 +256,18 @@
     Array.prototype.forEach.call(doc.querySelectorAll('.lang__b'), function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-lang') === lang)); });
     menuLabel();
     clearErrors();
-    // 03.11 (Sergei): Estonian callers reach Marina, Russian and English callers Sergei; the other number is shown under the big one
-    var TEL = { et: ['+37255946489', '+372 5594 6489'], ru: ['+37255549755', '+372 5554 9755'], en: ['+37255549755', '+372 5554 9755'] };
     var ALT = lang === 'et' ? TEL.ru : TEL.et;
     Array.prototype.forEach.call(doc.querySelectorAll('a[data-tel]'), function (a) {
       var n = a.getAttribute('data-tel') === 'main' ? TEL[lang] : ALT;
       a.setAttribute('href', 'tel:' + n[0]);
-      if (/^\+372/.test(a.textContent.trim())) a.textContent = n[1];
+      if (telText.indexOf(a) >= 0) a.textContent = n[1];
     });
     if (lbOpen) showPhoto(cur);
     renderFiles();
     if (sending) submitBtn.textContent = MSG[lang].sendBtn;
     if (mapIf) mapIf.title = MSG[lang].mapTitle;
     if (save) { try { localStorage.setItem('semar-lang', lang); } catch (e) {} }
+    cmsLang();
     root.classList.remove('i18n-wait');
   }
   Array.prototype.forEach.call(doc.querySelectorAll('.lang__b'), function (b) {
@@ -317,7 +321,7 @@
     });
     if (focus) tab.focus();
   }
-  liveTabs.forEach(function (tab) { tab.addEventListener('click', function () { selectTab(tab); }); });
+  tabs.forEach(function (tab) { tab.addEventListener('click', function () { if (!tab.hidden) selectTab(tab); }); });
   if (tablist) tablist.addEventListener('keydown', function (e) {
     var i = liveTabs.indexOf(doc.activeElement), n = liveTabs.length, j = -1;
     if (i < 0) return;
@@ -342,7 +346,6 @@
 
   /* ---------- gallery lightbox: prev/next stay inside the category on show ---------- */
   var lb = doc.getElementById('lb'), lbImg = doc.getElementById('lb-img'), lbCap = doc.getElementById('lb-cap'), lbCount = doc.getElementById('lb-count');
-  var tiles = Array.prototype.slice.call(doc.querySelectorAll('.tile__b'));
   var order = [], cur = 0, lbOpen = false, opener = null;
   function visualOrder(list) {
     return list.slice().sort(function (a, b) {
@@ -359,7 +362,8 @@
     lbCount.textContent = (cur + 1) + ' / ' + order.length;
   }
   function openLb(btn) {
-    order = visualOrder(Array.prototype.slice.call((btn.closest('.panel, .feat') || doc).querySelectorAll('.tile__b'))); opener = btn; lbOpen = true;
+    var box = btn.closest('.panel, .feat'), list = Array.prototype.slice.call((box || doc).querySelectorAll('.tile__b'));
+    order = box && box.classList.contains('feat') ? list : visualOrder(list); opener = btn; lbOpen = true;
     showPhoto(order.indexOf(btn));
     lb.hidden = false; root.style.overflow = 'hidden';
     doc.getElementById('lb-close').focus();
@@ -369,7 +373,7 @@
     lbOpen = false; lb.hidden = true; root.style.overflow = ''; lbImg.removeAttribute('src');
     if (opener) opener.focus();
   }
-  tiles.forEach(function (b) { b.addEventListener('click', function () { openLb(b); }); });
+  doc.addEventListener('click', function (e) { var b = e.target.closest ? e.target.closest('.tile__b') : null; if (b) openLb(b); });
   doc.getElementById('lb-close').addEventListener('click', closeLb);
   doc.getElementById('lb-prev').addEventListener('click', function () { showPhoto(cur - 1); });
   doc.getElementById('lb-next').addEventListener('click', function () { showPhoto(cur + 1); });
@@ -586,7 +590,7 @@
     mapIf.title = MSG[lang].mapTitle;
     mapIf.setAttribute('referrerpolicy', 'no-referrer-when-downgrade');
     mapIf.setAttribute('allowfullscreen', '');
-    mapIf.src = 'https://www.google.com/maps?q=Rohuneeme+tee+1,+Viimsi&output=embed&hl=' + lang;
+    mapIf.src = 'https://www.google.com/maps?q=' + (ADDR === ADDR0 ? 'Rohuneeme+tee+1,+Viimsi' : encodeURIComponent(ADDR)) + '&output=embed&hl=' + lang;
     mapFrame.textContent = ''; mapFrame.appendChild(mapIf); mapFrame.classList.add('is-on');
     mapIf.focus();
   });
@@ -598,6 +602,210 @@
   });
   var soc = doc.querySelector('.social');
   if (soc) soc.hidden = !soc.querySelector('.social__a:not([hidden])');
+
+  /* ---------- 23.11 site editor (semarkitchens.com/admin/): Sergei's texts, contacts and new works ----------
+     js/cms.js (vasylian-admin) loads what he saved and sends "cms:applied". A value equal to the page's own one, or empty,
+     changes nothing, so the untouched site stays exactly as it was (the HTML texts stay what search engines read).
+       texts     h1, heroLead, aboutP1, aboutP2 per language (et, ru, en)
+       contacts  telEt (the Estonian page's number), telRu (Russian and English pages), wa, mail, addr
+       works     [{c: k|w|b|o, t: {et, ru, en}, d: {et, ru, en}, p1 … p10: '/i/semar/<id>', s: 'WxH,WxH,…'}], newest first:
+                 the first fills the «Uusim töö» block (the hand-made one hides), the others go first into the gallery
+                 tab of their kind in full rows (no holes, the old tiles below keep their layout). One 1600 px image per photo. */
+  var CMS_TXT = ['h1', 'heroLead', 'aboutP1', 'aboutP2'];
+  var ORIG = { et: {}, ru: {}, en: {} };
+  CMS_TXT.concat(['addrFull']).forEach(function (k) { ORIG.et[k] = ET[k]; ORIG.ru[k] = RU[k]; ORIG.en[k] = EN[k]; });
+  var TEL0 = { et: TEL.et.slice(), ru: TEL.ru.slice() }, MAIL0 = MAIL;
+  var waLinks = Array.prototype.slice.call(doc.querySelectorAll('a[href^="https://wa.me/"]'));
+  var WA0 = waLinks.length ? waLinks[0].getAttribute('href').slice(14) : '';
+  var mapLinks = Array.prototype.slice.call(doc.querySelectorAll('a[href^="https://www.google.com/maps/search/"]'));
+  var mapHref0 = mapLinks.map(function (a) { return a.getAttribute('href'); });
+  var mapAddrEl = doc.querySelector('.map__addr');
+  var ADDR0 = mapAddrEl ? mapAddrEl.textContent.trim() : 'Rohuneeme tee 1, Viimsi', ADDR = ADDR0;
+  var mapTitle0 = { et: MSG.et.mapTitle, ru: MSG.ru.mapTitle, en: MSG.en.mapTitle };
+  var CATS = { k: 'p-koogid', w: 'p-kapid', b: 'p-vann', o: 'p-oues' };
+  var GEN = {        // the title of a work Sergei did not name in this language
+    k: { et: 'Köök eritellimusel', ru: 'Кухня на заказ', en: 'Custom-made kitchen' },
+    w: { et: 'Riidekapp eritellimusel', ru: 'Шкаф на заказ', en: 'Custom-made wardrobe' },
+    b: { et: 'Vannitoamööbel eritellimusel', ru: 'Мебель для ванной на заказ', en: 'Custom-made bathroom furniture' },
+    o: { et: 'Väliköök', ru: 'Уличная кухня', en: 'Outdoor kitchen' } };
+  var ASK = {        // the question next to «Küsige pakkumist!» (kitchens keep featAsk)
+    w: { et: 'Soovite sarnast riidekappi?', ru: 'Хотите такой же шкаф?', en: 'Want a wardrobe like this?' },
+    b: { et: 'Soovite sarnast vannitoamööblit?', ru: 'Хотите такую же мебель для ванной?', en: 'Want bathroom furniture like this?' },
+    o: { et: 'Soovite sarnast välikööki?', ru: 'Хотите такую же уличную кухню?', en: 'Want an outdoor kitchen like this?' } };
+  var cmsData = {}, cmsApi = '', cmsSite = '', cmsBinds = [];
+  var featStatic = doc.querySelector('.feat'), featCms = null;
+  function cmsSig() { return JSON.stringify([CMS_TXT.map(function (k) { return [ET[k], RU[k], EN[k]]; }), TEL, MAIL, ADDR]); }
+  var cmsLast = cmsSig();
+
+  function cmsStr(v, l) {
+    if (l && v && typeof v === 'object') v = v[l];
+    return typeof v === 'string' ? v.replace(/\s+/g, ' ').trim() : '';
+  }
+  function telOf(v) {          // [href digits, shown text] or null
+    var d = v.replace(/[^\d+]/g, ''), n = d.replace(/\D/g, '').length;
+    return n >= 7 && n <= 15 && /^\+?\d+$/.test(d) ? [d, v] : null;
+  }
+  function cmsLang() { cmsBinds.forEach(function (fn) { fn(); }); }
+  function mk(tag, cls) { var e = doc.createElement(tag); if (cls) e.className = cls; return e; }
+
+  function cmsContacts() {
+    var te = telOf(cmsStr(cmsData.telEt)), tr = telOf(cmsStr(cmsData.telRu));
+    TEL.et = te && te[1] !== TEL0.et[1] ? te : TEL0.et.slice();
+    TEL.ru = tr && tr[1] !== TEL0.ru[1] ? tr : TEL0.ru.slice();
+    TEL.en = TEL.ru;
+    // WhatsApp: digits with the country code (a local Estonian number gets 372)
+    var wa = cmsStr(cmsData.wa), wd = wa.replace(/\D/g, '');
+    if (wd && !/^(\+|00)/.test(wa) && wd.length <= 8) wd = '372' + wd;
+    if (/^00/.test(wa)) wd = wd.slice(2);
+    if (wd.length < 8 || wd.length > 15) wd = WA0;
+    waLinks.forEach(function (a) { a.setAttribute('href', 'https://wa.me/' + wd); });
+    // e-mail: the links, the address shown in the form's fallback box, and the address the form's ready e-mail goes to
+    var m = cmsStr(cmsData.mail);
+    if (!/^[^\s@<>"]+@[^\s@<>"]+\.[a-z]{2,}$/i.test(m)) m = MAIL0;
+    if (m !== MAIL) {
+      Array.prototype.forEach.call(doc.querySelectorAll('a[href^="mailto:"]'), function (a) {
+        var hr = a.getAttribute('href');
+        if (hr === 'mailto:' + MAIL || hr.indexOf('mailto:' + MAIL + '?') === 0) a.setAttribute('href', 'mailto:' + m + hr.slice(7 + MAIL.length));
+        if (a.textContent.trim() === MAIL) a.textContent = m;
+      });
+      Array.prototype.forEach.call(doc.querySelectorAll('.form__addr'), function (p) { if (p.textContent.trim() === MAIL) p.textContent = m; });
+      MAIL = m;
+    }
+    // address: contact list, footer, map box, Google Maps links and the map's title
+    var ad = cmsStr(cmsData.addr) || ADDR0;
+    if (ad !== ADDR) {
+      var same = ad === ADDR0;
+      ['et', 'ru', 'en'].forEach(function (l) {
+        (l === 'et' ? ET : DICT[l]).addrFull = same ? ORIG[l].addrFull : ad;
+        MSG[l].mapTitle = same ? mapTitle0[l] : mapTitle0[l].replace(ADDR0, ad);
+      });
+      mapLinks.forEach(function (a, i) {
+        a.setAttribute('href', same ? mapHref0[i] : 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(ad));
+        if (!a.hasAttribute('data-t') && a.textContent.trim() === ADDR) a.textContent = ad;
+      });
+      if (mapAddrEl) mapAddrEl.textContent = ad;
+      ADDR = ad;
+    }
+  }
+
+  function cmsWorks() {
+    var list = Array.isArray(cmsData.works) ? cmsData.works : [], out = [];
+    var re = /^\/i\/[a-z0-9][a-z0-9-]{1,40}\/[A-Za-z0-9_-]{16,64}$/;
+    list.forEach(function (it) {
+      if (!it || typeof it !== 'object') return;
+      var dims = String(it.s || '').split(','), ph = [];
+      for (var i = 1; i <= 10; i++) {
+        var p = it['p' + i];
+        if (typeof p !== 'string' || !re.test(p) || p.split('/')[2] !== cmsSite) continue;
+        var m = /^(\d{1,5})x(\d{1,5})$/.exec(dims[i - 1] || '');
+        ph.push({ src: cmsApi + p, w: m ? +m[1] : 1600, h: m ? +m[2] : 1200 });
+      }
+      if (ph.length) out.push({ c: CATS[it.c] ? it.c : 'k', t: it.t, d: it.d, ph: ph });
+    });
+    return out;
+  }
+  function workTitle(w) { return cmsStr(w.t, lang) || GEN[w.c][lang]; }
+
+  // tile sizes in rows of 4 desktop cells: 1 = plain (portrait), 2 = tile--l (landscape), 4 = tile--w (alone in its row).
+  // Least changes from each photo's own shape; every row full, so phones (2 columns) get pairs and the old tiles stay as they were
+  function pack(want) {
+    var n = want.length, INF = 1e9, best = [], from = [], i, f;
+    for (i = 0; i <= n; i++) { best.push([INF, INF, INF, INF]); from.push([null, null, null, null]); }
+    best[0][0] = 0;
+    for (i = 0; i < n; i++) for (f = 0; f < 4; f++) {
+      if (best[i][f] >= INF) continue;
+      [want[i], 3 - want[i], 4].forEach(function (s) {
+        if (s === 4 ? f !== 0 : f + s > 4) return;
+        var nf = (f + s) % 4, c = best[i][f] + (s === want[i] ? 0 : s === 4 ? 3 : 1);
+        if (c < best[i + 1][nf]) { best[i + 1][nf] = c; from[i + 1][nf] = [f, s]; }
+      });
+    }
+    var out = [], ff = 0;
+    for (i = n; i > 0; i--) { var st = from[i][ff]; out.unshift(st[1]); ff = st[0]; }
+    return out;
+  }
+  function photoImg(ph) {
+    var im = mk('img');
+    im.src = ph.src; im.width = ph.w; im.height = ph.h; im.loading = 'lazy'; im.decoding = 'async'; im.alt = '';
+    return im;
+  }
+  function buildFeat(w) {
+    var art = mk('article', 'feat feat--cms'), txt = mk('div', 'feat__text');
+    var label = mk('p', 'feat__label'), hh = mk('h3', 'feat__h'), p = mk('p', 'feat__p'), ask = mk('p', 'feat__ask'), askT = mk('span'), cta = mk('a', 'btn btn--cta btn--sm');
+    hh.id = 'feat-h-cms'; art.setAttribute('aria-labelledby', 'feat-h-cms'); cta.href = '#paring';
+    ask.appendChild(askT); ask.appendChild(doc.createTextNode(' ')); ask.appendChild(cta);
+    txt.appendChild(label); txt.appendChild(hh); txt.appendChild(p); txt.appendChild(ask);
+    var n = w.ph.length, pics = mk('div', 'feat__pics feat__pics--n' + Math.min(n, 3)), imgs = [];
+    w.ph.forEach(function (ph, i) {
+      var b = mk('button', 'tile__b feat__b' + (i === 0 ? ' feat__b--main' : ''));
+      b.type = 'button'; b.setAttribute('data-full', ph.src);
+      var im = photoImg(ph); imgs.push(im); b.appendChild(im);
+      if (i > 2) b.hidden = true;                        // in the lightbox only
+      if (i === 2 && n > 3) { b.className += ' feat__b--more'; var more = mk('span', 'feat__more'); more.setAttribute('aria-hidden', 'true'); more.textContent = '+' + (n - 3); b.appendChild(more); }
+      pics.appendChild(b);
+    });
+    art.appendChild(txt); art.appendChild(pics);
+    cmsBinds.push(function () {
+      var tt = workTitle(w), dd = cmsStr(w.d, lang);
+      label.textContent = t('featLabel'); hh.textContent = tt; p.textContent = dd; p.hidden = !dd;
+      askT.textContent = w.c === 'k' ? t('featAsk') : ASK[w.c][lang]; cta.textContent = t('cta');
+      imgs.forEach(function (im) { im.alt = tt; });
+    });
+    return art;
+  }
+  function refreshTabs() {
+    var sel = liveTabs.filter(function (x) { return x.getAttribute('aria-selected') === 'true'; })[0];
+    liveTabs.length = 0;
+    tabs.forEach(function (tab) {
+      var empty = !panelOf(tab).querySelector('.tile__b');
+      tab.hidden = empty; if (empty) panelOf(tab).hidden = true; else liveTabs.push(tab);
+    });
+    if (liveTabs.length) selectTab(liveTabs.indexOf(sel) >= 0 ? sel : liveTabs[0]);
+    if (tablist) tablist.hidden = liveTabs.length < 2;
+  }
+  function renderWorks() {
+    cmsBinds.length = 0;
+    if (featCms) { featCms.parentNode.removeChild(featCms); featCms = null; }
+    var had = doc.querySelectorAll('[data-cms-tile]');
+    Array.prototype.forEach.call(had, function (x) { x.parentNode.removeChild(x); });
+    var works = cmsWorks();
+    if (featStatic) featStatic.hidden = works.length > 0;
+    if (!works.length && !had.length) return;
+    if (works.length && featStatic) { featCms = buildFeat(works[0]); featStatic.parentNode.insertBefore(featCms, featStatic); }
+    var byCat = {};
+    works.slice(1).forEach(function (w) { (byCat[w.c] = byCat[w.c] || []).push(w); });
+    Object.keys(byCat).forEach(function (c) {
+      var panel = doc.getElementById(CATS[c]), grid = panel && panel.querySelector('.grid');
+      if (!grid) return;
+      var photos = [];
+      byCat[c].forEach(function (w) { w.ph.forEach(function (ph) { photos.push({ ph: ph, w: w }); }); });
+      var sizes = pack(photos.map(function (x) { return x.ph.w >= x.ph.h * 1.1 ? 2 : 1; })), first = grid.firstChild;
+      photos.forEach(function (x, i) {
+        var li = mk('li', 'tile' + (sizes[i] === 2 ? ' tile--l' : sizes[i] === 4 ? ' tile--w' : '')), b = mk('button', 'tile__b'), im = photoImg(x.ph);
+        li.setAttribute('data-cms-tile', '');
+        b.type = 'button'; b.setAttribute('data-full', x.ph.src); b.appendChild(im); li.appendChild(b);
+        grid.insertBefore(li, first);
+        cmsBinds.push(function () { im.alt = workTitle(x.w); });
+      });
+    });
+    refreshTabs();
+  }
+  doc.addEventListener('cms:applied', function (e) {
+    var s = doc.querySelector('script[data-cms-api]');
+    if (!s) return;
+    cmsApi = (s.getAttribute('data-cms-api') || '').replace(/\/+$/, '');
+    cmsSite = s.getAttribute('data-cms-site') || '';
+    var d = e.detail && e.detail.data;
+    cmsData = d && typeof d === 'object' && !Array.isArray(d) ? d : {};
+    CMS_TXT.forEach(function (k) {
+      ['et', 'ru', 'en'].forEach(function (l) { (l === 'et' ? ET : DICT[l])[k] = cmsStr(cmsData[k], l) || ORIG[l][k]; });
+    });
+    cmsContacts();
+    renderWorks();
+    // texts or numbers changed (now or before this load): put them in the page; else only the works' words
+    var sig = cmsSig();
+    if (sig !== cmsLast) { cmsLast = sig; applyLang(lang, false); } else cmsLang();
+  });
 
   /* ---------- start ---------- */
   // old ?lang= links still work and move to the language address; a saved choice applies on / only (a /ru/ or /en/ page keeps its language)
