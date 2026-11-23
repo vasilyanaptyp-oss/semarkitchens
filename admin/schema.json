@@ -4,27 +4,51 @@
   "site": "../",
   "title": "Semar kitchens",
   "ui": "ru",
-  "uiLangs": ["ru", "et", "en"],
+  "uiLangs": [
+    "ru",
+    "et",
+    "en"
+  ],
   "accent": "#5f7458",
-  "langs": ["ru", "et", "en"],
+  "langs": [
+    "ru",
+    "et",
+    "en"
+  ],
   "sections": [
     {
       "id": "works",
-      "label": { "ru": "Наши работы", "et": "Meie tööd", "en": "Our work" },
+      "label": {
+        "ru": "Наши работы",
+        "et": "Meie tööd",
+        "en": "Our work"
+      },
       "help": {
-        "ru": "Верхняя работа показывается на сайте большим блоком «Новая работа». Остальные встают первыми в галерею своего раздела. Старые фото на сайте остаются ниже.",
-        "et": "Ülemine töö on saidil suures plokis «Uusim töö». Teised tulevad oma kategooria galeriisse esimesena. Vanad fotod jäävad saidile allapoole.",
-        "en": "The top project is shown on the site in the big «Latest project» block. The others come first in the gallery of their kind. The older photos stay on the site below."
+        "ru": "Все работы сайта, сверху самая новая. Верхняя показывается большим блоком «Новая работа», остальные идут в галерею своего раздела в том же порядке.",
+        "et": "Kõik saidi tööd, uusim ülal. Ülemine on saidil suures plokis «Uusim töö», teised on oma kategooria galeriis samas järjekorras.",
+        "en": "All the projects on the site, newest first. The top one is shown in the big «Latest project» block, the others in the gallery of their kind in the same order."
       },
       "fields": [
         {
           "key": "works",
           "type": "list",
           "ui": "albums",
-          "max": 40,
-          "addLabel": { "ru": "Добавить работу", "et": "Lisa töö", "en": "Add a project" },
-          "firstNote": { "ru": "в блоке «Новая работа»", "et": "plokis «Uusim töö»", "en": "in the «Latest project» block" },
-          "langsLabel": { "ru": "На эстонском и английском (необязательно)", "et": "Teistes keeltes (ei ole kohustuslik)", "en": "In Estonian and English (optional)" },
+          "max": 60,
+          "addLabel": {
+            "ru": "Добавить работу",
+            "et": "Lisa töö",
+            "en": "Add a project"
+          },
+          "firstNote": {
+            "ru": "в блоке «Новая работа»",
+            "et": "plokis «Uusim töö»",
+            "en": "in the «Latest project» block"
+          },
+          "langsLabel": {
+            "ru": "На эстонском и английском (необязательно)",
+            "et": "Teistes keeltes (ei ole kohustuslik)",
+            "en": "In Estonian and English (optional)"
+          },
           "langsHelp": {
             "ru": "Если не заполнить, на эстонской и английской версиях сайта будет общее название, например «Köök eritellimusel», без описания.",
             "et": "Kui jätate tühjaks, on eesti- ja ingliskeelsel saidil üldine nimi, näiteks «Köök eritellimusel», ilma kirjelduseta.",
@@ -32,43 +56,158 @@
           },
           "fields": [
             {
-              "key": "c", "type": "text", "max": 2, "default": "k",
-              "label": { "ru": "Что на фото", "et": "Mis on fotol", "en": "What it is" },
+              "key": "c",
+              "type": "text",
+              "max": 2,
+              "default": "k",
+              "label": {
+                "ru": "Что на фото",
+                "et": "Mis on fotol",
+                "en": "What it is"
+              },
               "choices": [
-                { "v": "k", "label": { "ru": "Кухня", "et": "Köök", "en": "Kitchen" } },
-                { "v": "w", "label": { "ru": "Шкаф, гардероб", "et": "Riidekapp", "en": "Wardrobe" } },
-                { "v": "b", "label": { "ru": "Ванная", "et": "Vannituba", "en": "Bathroom" } },
-                { "v": "o", "label": { "ru": "Уличная кухня", "et": "Väliköök", "en": "Outdoor kitchen" } }
+                {
+                  "v": "k",
+                  "label": {
+                    "ru": "Кухня",
+                    "et": "Köök",
+                    "en": "Kitchen"
+                  }
+                },
+                {
+                  "v": "w",
+                  "label": {
+                    "ru": "Шкаф, гардероб",
+                    "et": "Riidekapp",
+                    "en": "Wardrobe"
+                  }
+                },
+                {
+                  "v": "b",
+                  "label": {
+                    "ru": "Ванная",
+                    "et": "Vannituba",
+                    "en": "Bathroom"
+                  }
+                },
+                {
+                  "v": "o",
+                  "label": {
+                    "ru": "Уличная кухня",
+                    "et": "Väliköök",
+                    "en": "Outdoor kitchen"
+                  }
+                }
               ]
             },
             {
-              "key": "t", "type": "text", "i18n": true, "max": 60,
-              "label": { "ru": "Название", "et": "Nimi", "en": "Title" },
-              "placeholder": { "ru": "Например: Светлая кухня с серой столешницей", "et": "Näiteks: Hele köök halli tööpinnaga", "en": "For example: A light kitchen with a grey worktop" }
+              "key": "t",
+              "type": "text",
+              "i18n": true,
+              "max": 60,
+              "label": {
+                "ru": "Название",
+                "et": "Nimi",
+                "en": "Title"
+              },
+              "placeholder": {
+                "ru": "Например: Светлая кухня с серой столешницей",
+                "et": "Näiteks: Hele köök halli tööpinnaga",
+                "en": "For example: A light kitchen with a grey worktop"
+              }
             },
             {
-              "key": "d", "type": "textarea", "i18n": true, "max": 280, "rows": 3,
-              "label": { "ru": "Пару слов о работе", "et": "Paar sõna tööst", "en": "A few words about it" },
-              "placeholder": { "ru": "Например: фасады без ручек, подсветка под шкафами", "et": "Näiteks: käepidemeteta fassaadid, valgustus kappide all", "en": "For example: handleless fronts, lights under the wall cabinets" }
+              "key": "d",
+              "type": "textarea",
+              "i18n": true,
+              "max": 280,
+              "rows": 3,
+              "label": {
+                "ru": "Пару слов о работе",
+                "et": "Paar sõna tööst",
+                "en": "A few words about it"
+              },
+              "placeholder": {
+                "ru": "Например: фасады без ручек, подсветка под шкафами",
+                "et": "Näiteks: käepidemeteta fassaadid, valgustus kappide all",
+                "en": "For example: handleless fronts, lights under the wall cabinets"
+              }
             },
-            { "key": "p1", "type": "image" },
-            { "key": "p2", "type": "image" },
-            { "key": "p3", "type": "image" },
-            { "key": "p4", "type": "image" },
-            { "key": "p5", "type": "image" },
-            { "key": "p6", "type": "image" },
-            { "key": "p7", "type": "image" },
-            { "key": "p8", "type": "image" },
-            { "key": "p9", "type": "image" },
-            { "key": "p10", "type": "image" },
-            { "key": "s", "type": "text", "max": 120, "role": "dims" }
+            {
+              "key": "p1",
+              "type": "image"
+            },
+            {
+              "key": "p2",
+              "type": "image"
+            },
+            {
+              "key": "p3",
+              "type": "image"
+            },
+            {
+              "key": "p4",
+              "type": "image"
+            },
+            {
+              "key": "p5",
+              "type": "image"
+            },
+            {
+              "key": "p6",
+              "type": "image"
+            },
+            {
+              "key": "p7",
+              "type": "image"
+            },
+            {
+              "key": "p8",
+              "type": "image"
+            },
+            {
+              "key": "p9",
+              "type": "image"
+            },
+            {
+              "key": "p10",
+              "type": "image"
+            },
+            {
+              "key": "s",
+              "type": "text",
+              "max": 120,
+              "role": "dims"
+            },
+            {
+              "key": "th",
+              "type": "text",
+              "max": 400,
+              "role": "thumbs"
+            },
+            {
+              "key": "o",
+              "type": "text",
+              "max": 60,
+              "perPhoto": true
+            }
           ]
+        },
+        {
+          "key": "v",
+          "type": "text",
+          "max": 8,
+          "hidden": true
         }
       ]
     },
     {
       "id": "texts",
-      "label": { "ru": "Тексты на сайте", "et": "Saidi tekstid", "en": "Texts on the site" },
+      "label": {
+        "ru": "Тексты на сайте",
+        "et": "Saidi tekstid",
+        "en": "Texts on the site"
+      },
       "help": {
         "ru": "Каждый язык сайта отдельно. Если поле пустое, на сайте остаётся прежний текст.",
         "et": "Iga saidi keel eraldi. Tühja välja korral jääb saidile senine tekst.",
@@ -76,40 +215,147 @@
       },
       "byLang": true,
       "fields": [
-        { "key": "h1", "type": "text", "i18n": true, "max": 48,
-          "label": { "ru": "Главный заголовок (первый экран)", "et": "Pealkiri (esimene ekraan)", "en": "Main heading (first screen)" } },
-        { "key": "heroLead", "type": "textarea", "i18n": true, "max": 220, "rows": 3,
-          "label": { "ru": "Текст под заголовком", "et": "Tekst pealkirja all", "en": "Text under the heading" } },
-        { "key": "aboutP1", "type": "textarea", "i18n": true, "max": 320, "rows": 4,
-          "label": { "ru": "«О нас»: первый абзац", "et": "«Meist»: esimene lõik", "en": "«About us»: first paragraph" } },
-        { "key": "aboutP2", "type": "textarea", "i18n": true, "max": 320, "rows": 4,
-          "label": { "ru": "«О нас»: второй абзац", "et": "«Meist»: teine lõik", "en": "«About us»: second paragraph" } }
+        {
+          "key": "h1",
+          "type": "text",
+          "i18n": true,
+          "max": 48,
+          "label": {
+            "ru": "Главный заголовок (первый экран)",
+            "et": "Pealkiri (esimene ekraan)",
+            "en": "Main heading (first screen)"
+          }
+        },
+        {
+          "key": "heroLead",
+          "type": "textarea",
+          "i18n": true,
+          "max": 220,
+          "rows": 3,
+          "label": {
+            "ru": "Текст под заголовком",
+            "et": "Tekst pealkirja all",
+            "en": "Text under the heading"
+          }
+        },
+        {
+          "key": "aboutP1",
+          "type": "textarea",
+          "i18n": true,
+          "max": 320,
+          "rows": 4,
+          "label": {
+            "ru": "«О нас»: первый абзац",
+            "et": "«Meist»: esimene lõik",
+            "en": "«About us»: first paragraph"
+          }
+        },
+        {
+          "key": "aboutP2",
+          "type": "textarea",
+          "i18n": true,
+          "max": 320,
+          "rows": 4,
+          "label": {
+            "ru": "«О нас»: второй абзац",
+            "et": "«Meist»: teine lõik",
+            "en": "«About us»: second paragraph"
+          }
+        }
       ]
     },
     {
       "id": "contacts",
-      "label": { "ru": "Контакты", "et": "Kontaktid", "en": "Contacts" },
+      "label": {
+        "ru": "Контакты",
+        "et": "Kontaktid",
+        "en": "Contacts"
+      },
       "help": {
         "ru": "Меняются сразу везде: кнопки «Позвонить» и WhatsApp, раздел «Контакты», подвал сайта.",
         "et": "Muutuvad korraga kõikjal: nupud «Helista» ja WhatsApp, kontaktid, jalus.",
         "en": "They change everywhere at once: the «Call» and WhatsApp buttons, the contact section, the footer."
       },
       "fields": [
-        { "key": "telEt", "type": "text", "format": "tel", "max": 24,
-          "label": { "ru": "Телефон на эстонской версии сайта", "et": "Telefon eestikeelsel saidil", "en": "Phone on the Estonian site" },
-          "help": { "ru": "На русской и английской версиях он стоит вторым: «На эстонском».", "et": "Vene- ja ingliskeelsel saidil on see teine number.", "en": "On the Russian and English sites it is the second number." } },
-        { "key": "telRu", "type": "text", "format": "tel", "max": 24,
-          "label": { "ru": "Телефон на русской и английской версиях", "et": "Telefon vene- ja ingliskeelsel saidil", "en": "Phone on the Russian and English sites" },
-          "help": { "ru": "На эстонской версии он стоит вторым: «Vene keeles».", "et": "Eestikeelsel saidil on see teine number: «Vene keeles».", "en": "On the Estonian site it is the second number." } },
-        { "key": "wa", "type": "text", "format": "tel", "max": 24,
-          "label": { "ru": "Номер WhatsApp", "et": "WhatsAppi number", "en": "WhatsApp number" },
-          "help": { "ru": "С кодом страны, например +372 5554 9755.", "et": "Riigikoodiga, näiteks +372 5554 9755.", "en": "With the country code, for example +372 5554 9755." } },
-        { "key": "mail", "type": "text", "format": "email", "max": 80,
-          "label": { "ru": "E-mail", "et": "E-post", "en": "E-mail" },
-          "help": { "ru": "Если меняете почту, напишите Артуру: заявки с формы сайта тоже нужно перенаправить.", "et": "Kui muudate e-posti, kirjutage Arturile: ka saidi vormi päringud tuleb ümber suunata.", "en": "If you change the e-mail, tell Artur: the site form's requests need to be redirected too." } },
-        { "key": "addr", "type": "text", "max": 80,
-          "label": { "ru": "Адрес мастерской", "et": "Töökoja aadress", "en": "Workshop address" },
-          "help": { "ru": "Улица, дом и посёлок, как сейчас. По нему ищет карта Google.", "et": "Tänav, maja ja asula nagu praegu. Google'i kaart otsib selle järgi.", "en": "Street, number and place, as now. The Google map searches for it." } }
+        {
+          "key": "telEt",
+          "type": "text",
+          "format": "tel",
+          "max": 24,
+          "label": {
+            "ru": "Телефон на эстонской версии сайта",
+            "et": "Telefon eestikeelsel saidil",
+            "en": "Phone on the Estonian site"
+          },
+          "help": {
+            "ru": "На русской и английской версиях он стоит вторым: «На эстонском».",
+            "et": "Vene- ja ingliskeelsel saidil on see teine number.",
+            "en": "On the Russian and English sites it is the second number."
+          }
+        },
+        {
+          "key": "telRu",
+          "type": "text",
+          "format": "tel",
+          "max": 24,
+          "label": {
+            "ru": "Телефон на русской и английской версиях",
+            "et": "Telefon vene- ja ingliskeelsel saidil",
+            "en": "Phone on the Russian and English sites"
+          },
+          "help": {
+            "ru": "На эстонской версии он стоит вторым: «Vene keeles».",
+            "et": "Eestikeelsel saidil on see teine number: «Vene keeles».",
+            "en": "On the Estonian site it is the second number."
+          }
+        },
+        {
+          "key": "wa",
+          "type": "text",
+          "format": "tel",
+          "max": 24,
+          "label": {
+            "ru": "Номер WhatsApp",
+            "et": "WhatsAppi number",
+            "en": "WhatsApp number"
+          },
+          "help": {
+            "ru": "С кодом страны, например +372 5554 9755.",
+            "et": "Riigikoodiga, näiteks +372 5554 9755.",
+            "en": "With the country code, for example +372 5554 9755."
+          }
+        },
+        {
+          "key": "mail",
+          "type": "text",
+          "format": "email",
+          "max": 80,
+          "label": {
+            "ru": "E-mail",
+            "et": "E-post",
+            "en": "E-mail"
+          },
+          "help": {
+            "ru": "Если меняете почту, напишите Артуру: заявки с формы сайта тоже нужно перенаправить.",
+            "et": "Kui muudate e-posti, kirjutage Arturile: ka saidi vormi päringud tuleb ümber suunata.",
+            "en": "If you change the e-mail, tell Artur: the site form's requests need to be redirected too."
+          }
+        },
+        {
+          "key": "addr",
+          "type": "text",
+          "max": 80,
+          "label": {
+            "ru": "Адрес мастерской",
+            "et": "Töökoja aadress",
+            "en": "Workshop address"
+          },
+          "help": {
+            "ru": "Улица, дом и посёлок, как сейчас. По нему ищет карта Google.",
+            "et": "Tänav, maja ja asula nagu praegu. Google'i kaart otsib selle järgi.",
+            "en": "Street, number and place, as now. The Google map searches for it."
+          }
+        }
       ]
     }
   ]

@@ -608,9 +608,9 @@
      changes nothing, so the untouched site stays exactly as it was (the HTML texts stay what search engines read).
        texts     h1, heroLead, aboutP1, aboutP2 per language (et, ru, en)
        contacts  telEt (the Estonian page's number), telRu (Russian and English pages), wa, mail, addr
-       works     [{c: k|w|b|o, t: {et, ru, en}, d: {et, ru, en}, p1 … p10: '/i/semar/<id>', s: 'WxH,WxH,…'}], newest first:
-                 the first fills the «Uusim töö» block (the hand-made one hides), the others go first into the gallery
-                 tab of their kind in full rows (no holes, the old tiles below keep their layout). One 1600 px image per photo. */
+       works     [{c: k|w|b|o, t: {et, ru, en}, d: {et, ru, en}, p1 … p10: '/i/semar/<id>', s: 'WxH,…', th: previews, o: 'w07,…'}],
+                 newest first. o = the site's own photo a work photo stands for (the old gallery, moved into the editor on
+                 24.11 by tools/migrate_old.py; v: 'g1' marks that). See renderWorks for how the gallery follows the list. */
   var CMS_TXT = ['h1', 'heroLead', 'aboutP1', 'aboutP2'];
   var ORIG = { et: {}, ru: {}, en: {} };
   CMS_TXT.concat(['addrFull']).forEach(function (k) { ORIG.et[k] = ET[k]; ORIG.ru[k] = RU[k]; ORIG.en[k] = EN[k]; });
@@ -688,26 +688,41 @@
     }
   }
 
+  // the gallery as the page has it: per kind its tiles and their photo keys (w07 …), and the keys of the «Uusim töö» block
+  function keyOf(im) { var m = /(?:^|,)alt:(w\d{2,3})(?:,|$)/.exec(im && im.getAttribute('data-ta') || ''); return m ? m[1] : ''; }
+  var STATIC = {}, staticTile = {};
+  Object.keys(CATS).forEach(function (c) {
+    var panel = doc.getElementById(CATS[c]), grid = panel && panel.querySelector('.grid');
+    if (!grid) return;
+    var kids = Array.prototype.slice.call(grid.children);
+    STATIC[c] = { grid: grid, kids: kids, keys: kids.map(function (li) { var k = keyOf(li.querySelector('img')); if (k) staticTile[k] = li; return k; }) };
+  });
+  var featKeys = featStatic ? Array.prototype.map.call(featStatic.querySelectorAll('.tile__b img'), keyOf) : [];
+  var featEls = featStatic ? { h: featStatic.querySelector('.feat__h'), p: featStatic.querySelector('.feat__p'), ask: featStatic.querySelector('[data-t="featAsk"]') } : null;
+
   function cmsWorks() {
     var list = Array.isArray(cmsData.works) ? cmsData.works : [], out = [];
     var re = /^\/i\/[a-z0-9][a-z0-9-]{1,40}\/[A-Za-z0-9_-]{16,64}$/;
     list.forEach(function (it) {
       if (!it || typeof it !== 'object') return;
-      var dims = String(it.s || '').split(','), ph = [];
+      var dims = String(it.s || '').split(','), keys = String(it.o || '').split(','), ph = [];
       for (var i = 1; i <= 10; i++) {
         var p = it['p' + i];
         if (typeof p !== 'string' || !re.test(p) || p.split('/')[2] !== cmsSite) continue;
-        var m = /^(\d{1,5})x(\d{1,5})$/.exec(dims[i - 1] || '');
-        ph.push({ src: cmsApi + p, w: m ? +m[1] : 1600, h: m ? +m[2] : 1200 });
+        var m = /^(\d{1,5})x(\d{1,5})$/.exec(dims[i - 1] || ''), k = keys[i - 1] || '';
+        ph.push({ src: cmsApi + p, w: m ? +m[1] : 1600, h: m ? +m[2] : 1200, key: /^w\d{2,3}$/.test(k) && staticTile[k] ? k : '' });
       }
       if (ph.length) out.push({ c: CATS[it.c] ? it.c : 'k', t: it.t, d: it.d, ph: ph });
     });
     return out;
   }
   function workTitle(w) { return cmsStr(w.t, lang) || GEN[w.c][lang]; }
+  function sameKeys(phs, keys) {
+    return phs.length === keys.length && phs.every(function (ph, i) { return ph.key && ph.key === keys[i]; });
+  }
 
   // tile sizes in rows of 4 desktop cells: 1 = plain (portrait), 2 = tile--l (landscape), 4 = tile--w (alone in its row).
-  // Least changes from each photo's own shape; every row full, so phones (2 columns) get pairs and the old tiles stay as they were
+  // Least changes from each photo's own shape; every row full, so phones (2 columns) get pairs and no hole is left
   function pack(want) {
     var n = want.length, INF = 1e9, best = [], from = [], i, f;
     for (i = 0; i <= n; i++) { best.push([INF, INF, INF, INF]); from.push([null, null, null, null]); }
@@ -724,11 +739,17 @@
     for (i = n; i > 0; i--) { var st = from[i][ff]; out.unshift(st[1]); ff = st[0]; }
     return out;
   }
-  function photoImg(ph) {
-    var im = mk('img');
-    im.src = ph.src; im.width = ph.w; im.height = ph.h; im.loading = 'lazy'; im.decoding = 'async'; im.alt = '';
+  // a photo of the old gallery keeps the site's own files (900/1600 px, its crop); a new one comes from the editor's Worker
+  function photoImg(ph, sizes) {
+    var im;
+    if (ph.key) { im = staticTile[ph.key].querySelector('img').cloneNode(false); im.removeAttribute('data-ta'); }
+    else { im = mk('img'); im.src = ph.src; im.width = ph.w; im.height = ph.h; }
+    im.loading = 'lazy'; im.decoding = 'async'; im.alt = '';
+    if (sizes && im.hasAttribute('srcset')) im.setAttribute('sizes', sizes);
     return im;
   }
+  function fullOf(ph) { return ph.key ? staticTile[ph.key].querySelector('.tile__b').getAttribute('data-full') : ph.src; }
+  function altOf(ph, w) { return ph.key ? t(ph.key) : workTitle(w); }
   function buildFeat(w) {
     var art = mk('article', 'feat feat--cms'), txt = mk('div', 'feat__text');
     var label = mk('p', 'feat__label'), hh = mk('h3', 'feat__h'), p = mk('p', 'feat__p'), ask = mk('p', 'feat__ask'), askT = mk('span'), cta = mk('a', 'btn btn--cta btn--sm');
@@ -738,8 +759,8 @@
     var n = w.ph.length, pics = mk('div', 'feat__pics feat__pics--n' + Math.min(n, 3)), imgs = [];
     w.ph.forEach(function (ph, i) {
       var b = mk('button', 'tile__b feat__b' + (i === 0 ? ' feat__b--main' : ''));
-      b.type = 'button'; b.setAttribute('data-full', ph.src);
-      var im = photoImg(ph); imgs.push(im); b.appendChild(im);
+      b.type = 'button'; b.setAttribute('data-full', fullOf(ph));
+      var im = photoImg(ph, i === 0 ? '(min-width: 960px) 44vw, 100vw' : '(min-width: 960px) 22vw, 50vw'); imgs.push([im, ph]); b.appendChild(im);
       if (i > 2) b.hidden = true;                        // in the lightbox only
       if (i === 2 && n > 3) { b.className += ' feat__b--more'; var more = mk('span', 'feat__more'); more.setAttribute('aria-hidden', 'true'); more.textContent = '+' + (n - 3); b.appendChild(more); }
       pics.appendChild(b);
@@ -749,9 +770,17 @@
       var tt = workTitle(w), dd = cmsStr(w.d, lang);
       label.textContent = t('featLabel'); hh.textContent = tt; p.textContent = dd; p.hidden = !dd;
       askT.textContent = w.c === 'k' ? t('featAsk') : ASK[w.c][lang]; cta.textContent = t('cta');
-      imgs.forEach(function (im) { im.alt = tt; });
+      imgs.forEach(function (x) { x[0].alt = x[1].key ? t(x[1].key) : tt; });
     });
     return art;
+  }
+  var SIZES = { 1: '(min-width: 960px) 23vw, 50vw', 2: '(min-width: 960px) 46vw, 100vw', 4: '(min-width: 960px) 92vw, 100vw' };
+  function tileFor(ph, w, size) {
+    var li = mk('li', 'tile' + (size === 2 ? ' tile--l' : size === 4 ? ' tile--w' : '')), b = mk('button', 'tile__b'), im = photoImg(ph, SIZES[size]);
+    li.setAttribute('data-cms-tile', '');
+    b.type = 'button'; b.setAttribute('data-full', fullOf(ph)); b.appendChild(im); li.appendChild(b);
+    cmsBinds.push(function () { im.alt = altOf(ph, w); });
+    return li;
   }
   function refreshTabs() {
     var sel = liveTabs.filter(function (x) { return x.getAttribute('aria-selected') === 'true'; })[0];
@@ -763,30 +792,54 @@
     if (liveTabs.length) selectTab(liveTabs.indexOf(sel) >= 0 ? sel : liveTabs[0]);
     if (tablist) tablist.hidden = liveTabs.length < 2;
   }
+  function setGrid(S, nodes) {
+    var now = Array.prototype.slice.call(S.grid.children);
+    if (now.length === nodes.length && now.every(function (x, i) { return x === nodes[i]; })) return;
+    S.grid.textContent = '';
+    nodes.forEach(function (x) { S.grid.appendChild(x); });
+  }
   function renderWorks() {
     cmsBinds.length = 0;
     if (featCms) { featCms.parentNode.removeChild(featCms); featCms = null; }
-    var had = doc.querySelectorAll('[data-cms-tile]');
-    Array.prototype.forEach.call(had, function (x) { x.parentNode.removeChild(x); });
     var works = cmsWorks();
-    if (featStatic) featStatic.hidden = works.length > 0;
-    if (!works.length && !had.length) return;
-    if (works.length && featStatic) { featCms = buildFeat(works[0]); featStatic.parentNode.insertBefore(featCms, featStatic); }
-    var byCat = {};
-    works.slice(1).forEach(function (w) { (byCat[w.c] = byCat[w.c] || []).push(w); });
-    Object.keys(byCat).forEach(function (c) {
-      var panel = doc.getElementById(CATS[c]), grid = panel && panel.querySelector('.grid');
-      if (!grid) return;
-      var photos = [];
-      byCat[c].forEach(function (w) { w.ph.forEach(function (ph) { photos.push({ ph: ph, w: w }); }); });
-      var sizes = pack(photos.map(function (x) { return x.ph.w >= x.ph.h * 1.1 ? 2 : 1; })), first = grid.firstChild;
-      photos.forEach(function (x, i) {
-        var li = mk('li', 'tile' + (sizes[i] === 2 ? ' tile--l' : sizes[i] === 4 ? ' tile--w' : '')), b = mk('button', 'tile__b'), im = photoImg(x.ph);
-        li.setAttribute('data-cms-tile', '');
-        b.type = 'button'; b.setAttribute('data-full', x.ph.src); b.appendChild(im); li.appendChild(b);
-        grid.insertBefore(li, first);
-        cmsBinds.push(function () { im.alt = workTitle(x.w); });
+    var managed = cmsData.v === 'g1' || works.some(function (w) { return w.ph.some(function (ph) { return ph.key; }); });
+    if (!managed) {
+      // the old gallery is not in the editor (yet): it stays as it is; the editor's works come first
+      Object.keys(STATIC).forEach(function (c) { setGrid(STATIC[c], STATIC[c].kids); });
+      if (featStatic) featStatic.hidden = works.length > 0;
+      if (!works.length) { refreshTabs(); return; }
+      if (featStatic) { featCms = buildFeat(works[0]); featStatic.parentNode.insertBefore(featCms, featStatic); }
+      var byCat = {};
+      works.slice(1).forEach(function (w) { w.ph.forEach(function (ph) { (byCat[w.c] = byCat[w.c] || []).push({ ph: ph, w: w }); }); });
+      Object.keys(byCat).forEach(function (c) {
+        if (!STATIC[c]) return;
+        var sizes = pack(byCat[c].map(function (x) { return x.ph.w >= x.ph.h * 1.1 ? 2 : 1; }));
+        setGrid(STATIC[c], byCat[c].map(function (x, i) { return tileFor(x.ph, x.w, sizes[i]); }).concat(STATIC[c].kids));
       });
+      refreshTabs();
+      return;
+    }
+    // the whole gallery is in the editor (24.11 migration): the first work fills «Uusim töö» and closes its tab (as the page
+    // has it), the others go into their tab in the list's order. A tab or the block whose photos are exactly the page's own stays
+    // the page's own (same tiles, same crops); a changed tab is laid out again in full rows.
+    var W0 = works[0] || null;
+    if (featStatic) featStatic.hidden = !(W0 && sameKeys(W0.ph, featKeys));
+    if (W0 && featStatic && !featStatic.hidden) {
+      cmsBinds.push(function () {
+        var dd = cmsStr(W0.d, lang);
+        featEls.h.textContent = workTitle(W0); featEls.p.textContent = dd; featEls.p.hidden = !dd;
+        featEls.ask.textContent = W0.c === 'k' ? t('featAsk') : ASK[W0.c][lang];
+      });
+    } else if (W0 && featStatic) {
+      featCms = buildFeat(W0); featStatic.parentNode.insertBefore(featCms, featStatic);
+    }
+    Object.keys(STATIC).forEach(function (c) {
+      var S = STATIC[c], list = [];
+      works.forEach(function (w, i) { if (i > 0 && w.c === c) w.ph.forEach(function (ph) { list.push({ ph: ph, w: w }); }); });
+      if (W0 && W0.c === c) W0.ph.forEach(function (ph) { list.push({ ph: ph, w: W0 }); });
+      if (sameKeys(list.map(function (x) { return x.ph; }), S.keys)) { setGrid(S, S.kids); return; }
+      var sizes = pack(list.map(function (x) { return x.ph.w >= x.ph.h * 1.1 ? 2 : 1; }));
+      setGrid(S, list.map(function (x, i) { return tileFor(x.ph, x.w, sizes[i]); }));
     });
     refreshTabs();
   }

@@ -109,7 +109,7 @@
       uplDone: 'Foto augšupielādēti. Nospiediet «Saglabāt», lai tie parādītos vietnē.', tooMany: 'Vienā darbā var būt līdz {max} foto. Liekie netika pievienoti.',
       failed: 'Neizdevās', retry: 'Mēģināt vēlreiz', otherLangs: 'Citas valodas (nav obligāti)', optional: '(nav obligāti)', workN: 'Darbs {n}',
       badTel: 'Pārbaudiet numuru laukā «{f}».', badMail: 'Pārbaudiet e-pasta adresi laukā «{f}».', full: 'Vietas foto vairs nav. Sazinieties ar izstrādātāju.',
-      busyMany: 'Uzgaidiet, foto vēl augšupielādējas.', photoN: 'Foto {i}', photoHint: '★ padara foto par galveno (vietnē tas ir pirmais), bultiņas maina secību.' },
+      busyMany: 'Uzgaidiet, foto vēl augšupielādējas.', photoN: 'Foto {i}', photoHint: '★ padara foto par galveno (vietnē tas ir pirmais). Secība: pārvelciet foto aiz punktiem stūrī vai spiediet bultiņas.', drag: 'Pārvilkt foto', dragWork: 'Pārvilkt darbu', worksHint: 'Darbu secība: pārvelciet darbu aiz punktiem kreisajā pusē vai ar pogām «Uz augšu» un «Uz leju».' },
     ru: { addWork: 'Добавить работу', addPhotos: 'Добавить фото', emptyAlbums: 'Здесь пока нет работ. Нажмите «{b}» и выберите фото из галереи телефона.',
       nPhotos: '{n} фото', noPhoto: 'Добавьте хотя бы одно фото: без фото работа не появится на сайте.', cover: 'Главное', makeCover: 'Сделать главным',
       left: 'Левее', right: 'Правее', removePhoto: 'Удалить фото', removePhotoQ: 'Убрать это фото с сайта?', removeWork: 'Удалить работу',
@@ -117,7 +117,7 @@
       uplDone: 'Фото загружены. Нажмите «Сохранить», чтобы они появились на сайте.', tooMany: 'В одной работе можно до {max} фото. Лишние не добавлены.',
       failed: 'Не загрузилось', retry: 'Повторить', otherLangs: 'Другие языки (необязательно)', optional: '(необязательно)', workN: 'Работа {n}',
       badTel: 'Проверьте номер в поле «{f}».', badMail: 'Проверьте адрес почты в поле «{f}».', full: 'Место для фото закончилось. Напишите разработчику.',
-      busyMany: 'Подождите, фото ещё загружаются.', photoN: 'Фото {i}', photoHint: '★ делает фото главным (на сайте оно первое), стрелки меняют порядок.' },
+      busyMany: 'Подождите, фото ещё загружаются.', photoN: 'Фото {i}', photoHint: '★ делает фото главным (на сайте оно первое). Порядок: перетащите фото за точки в углу или нажимайте стрелки.', drag: 'Перетащить фото', dragWork: 'Перетащить работу', worksHint: 'Порядок работ: перетащите работу за точки слева или кнопками «Выше» и «Ниже».' },
     pl: { addWork: 'Dodaj realizację', addPhotos: 'Dodaj zdjęcia', emptyAlbums: 'Nie ma tu jeszcze realizacji. Naciśnij «{b}» i wybierz zdjęcia z galerii telefonu.',
       nPhotos: '{n} zdj.', noPhoto: 'Dodaj co najmniej jedno zdjęcie: bez zdjęć realizacja nie pojawi się na stronie.', cover: 'Główne', makeCover: 'Ustaw jako główne',
       left: 'W lewo', right: 'W prawo', removePhoto: 'Usuń zdjęcie', removePhotoQ: 'Usunąć to zdjęcie ze strony?', removeWork: 'Usuń realizację',
@@ -125,7 +125,7 @@
       uplDone: 'Zdjęcia wysłane. Naciśnij «Zapisz», aby pojawiły się na stronie.', tooMany: 'Jedna realizacja może mieć do {max} zdjęć. Nadmiarowe nie zostały dodane.',
       failed: 'Nie wysłano', retry: 'Ponów', otherLangs: 'Inne języki (opcjonalnie)', optional: '(opcjonalnie)', workN: 'Realizacja {n}',
       badTel: 'Sprawdź numer w polu «{f}».', badMail: 'Sprawdź adres e-mail w polu «{f}».', full: 'Brak miejsca na zdjęcia. Skontaktuj się z twórcą strony.',
-      busyMany: 'Poczekaj, zdjęcia jeszcze się wysyłają.', photoN: 'Zdjęcie {i}', photoHint: '★ ustawia zdjęcie jako główne (na stronie jest pierwsze), strzałki zmieniają kolejność.' },
+      busyMany: 'Poczekaj, zdjęcia jeszcze się wysyłają.', photoN: 'Zdjęcie {i}', photoHint: '★ ustawia zdjęcie jako główne (na stronie jest pierwsze). Kolejność: przeciągnij zdjęcie za kropki w rogu albo użyj strzałek.', drag: 'Przeciągnij zdjęcie', dragWork: 'Przeciągnij realizację', worksHint: 'Kolejność realizacji: przeciągnij za kropki po lewej albo użyj przycisków «W górę» i «W dół».' },
     et: { addWork: 'Lisa töö', addPhotos: 'Lisa fotod', emptyAlbums: 'Siin pole veel ühtegi tööd. Vajutage «{b}» ja valige fotod telefoni galeriist.',
       nPhotos: '{n} fotot', noPhoto: 'Lisage vähemalt üks foto: ilma fotota tööd saidil ei näidata.', cover: 'Peamine', makeCover: 'Tee peamiseks',
       left: 'Vasakule', right: 'Paremale', removePhoto: 'Kustuta foto', removePhotoQ: 'Kas eemaldada see foto saidilt?', removeWork: 'Kustuta töö',
@@ -133,7 +133,7 @@
       uplDone: 'Fotod on üles laaditud. Vajutage «Salvesta», et need saidil näha oleksid.', tooMany: 'Ühes töös võib olla kuni {max} fotot. Ülejäänuid ei lisatud.',
       failed: 'Ei õnnestunud', retry: 'Proovi uuesti', otherLangs: 'Teised keeled (ei ole kohustuslik)', optional: '(ei ole kohustuslik)', workN: 'Töö {n}',
       badTel: 'Kontrollige numbrit väljal «{f}».', badMail: 'Kontrollige e-posti aadressi väljal «{f}».', full: 'Fotode jaoks pole enam ruumi. Võtke ühendust arendajaga.',
-      busyMany: 'Oodake, fotode üleslaadimine on pooleli.', photoN: 'Foto {i}', photoHint: '★ teeb foto peamiseks (saidil on see esimene), nooled muudavad järjekorda.' },
+      busyMany: 'Oodake, fotode üleslaadimine on pooleli.', photoN: 'Foto {i}', photoHint: '★ teeb foto peamiseks (saidil on see esimene). Järjekord: lohistage fotot nurgas olevatest punktidest või vajutage nooli.', drag: 'Lohista fotot', dragWork: 'Lohista tööd', worksHint: 'Tööde järjekord: lohistage tööd vasakul olevatest punktidest või nuppudega «Üles» ja «Alla».' },
     uk: { addWork: 'Додати роботу', addPhotos: 'Додати фото', emptyAlbums: 'Тут поки немає робіт. Натисніть «{b}» і виберіть фото з галереї телефона.',
       nPhotos: '{n} фото', noPhoto: 'Додайте хоча б одне фото: без фото робота не з’явиться на сайті.', cover: 'Головне', makeCover: 'Зробити головним',
       left: 'Ліворуч', right: 'Праворуч', removePhoto: 'Видалити фото', removePhotoQ: 'Прибрати це фото із сайту?', removeWork: 'Видалити роботу',
@@ -141,7 +141,7 @@
       uplDone: 'Фото завантажено. Натисніть «Зберегти», щоб вони з’явилися на сайті.', tooMany: 'В одній роботі може бути до {max} фото. Зайві не додано.',
       failed: 'Не завантажилося', retry: 'Повторити', otherLangs: 'Інші мови (необов’язково)', optional: '(необов’язково)', workN: 'Робота {n}',
       badTel: 'Перевірте номер у полі «{f}».', badMail: 'Перевірте адресу пошти в полі «{f}».', full: 'Місце для фото закінчилося. Зверніться до розробника.',
-      busyMany: 'Зачекайте, фото ще завантажуються.', photoN: 'Фото {i}', photoHint: '★ робить фото головним (на сайті воно перше), стрілки змінюють порядок.' },
+      busyMany: 'Зачекайте, фото ще завантажуються.', photoN: 'Фото {i}', photoHint: '★ робить фото головним (на сайті воно перше). Порядок: перетягніть фото за крапки в куті або натискайте стрілки.', drag: 'Перетягнути фото', dragWork: 'Перетягнути роботу', worksHint: 'Порядок робіт: перетягніть роботу за крапки ліворуч або кнопками «Вище» і «Нижче».' },
     en: { addWork: 'Add a project', addPhotos: 'Add photos', emptyAlbums: 'No projects here yet. Press «{b}» and pick photos from the phone gallery.',
       nPhotos: '{n} photos', noPhoto: 'Add at least one photo: a project without photos does not show on the site.', cover: 'Main', makeCover: 'Make main photo',
       left: 'Move left', right: 'Move right', removePhoto: 'Delete photo', removePhotoQ: 'Remove this photo from the site?', removeWork: 'Delete project',
@@ -149,7 +149,7 @@
       uplDone: 'Photos uploaded. Press «Save» to show them on the site.', tooMany: 'A project can have up to {max} photos. The extra ones were not added.',
       failed: 'Not uploaded', retry: 'Try again', otherLangs: 'Other languages (optional)', optional: '(optional)', workN: 'Project {n}',
       badTel: 'Please check the number in «{f}».', badMail: 'Please check the e-mail address in «{f}».', full: 'There is no more room for photos. Please contact the developer.',
-      busyMany: 'Please wait, photos are still uploading.', photoN: 'Photo {i}', photoHint: '★ makes a photo the main one (it comes first on the site); the arrows change the order.' }
+      busyMany: 'Please wait, photos are still uploading.', photoN: 'Photo {i}', photoHint: '★ makes a photo the main one (it comes first on the site). Order: drag a photo by the dots in its corner or use the arrows.', drag: 'Drag the photo', dragWork: 'Drag the project', worksHint: 'Order of projects: drag a project by the dots on the left or use «Move up» and «Move down».' }
   };
   Object.keys(MORE).forEach(function (l) { Object.keys(MORE[l]).forEach(function (k) { STR[l][k] = MORE[l][k]; }); });
   var ICON = {
@@ -159,7 +159,8 @@
     plus: 'M12 5v14M5 12h14', ext: 'M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5', out: 'M15 4h4v16h-4M10 8l-4 4 4 4M6 12h10',
     photo: 'M4 7h3l2-2h6l2 2h3v12H4zM12 10a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7z', undo: 'M9 7L4 12l5 5M4 12h11a5 5 0 0 1 0 10h-2', chev: 'M6 9l6 6 6-6',
     left: 'M15 5l-7 7 7 7', right: 'M9 5l7 7-7 7', x: 'M6 6l12 12M18 6L6 18',
-    star: 'M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z'
+    star: 'M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z',
+    grip: 'M9 6h.01M15 6h.01M9 12h.01M15 12h.01M9 18h.01M15 18h.01'
   };
 
   var S = null, API = '', SLUG = '', ui = 'lv', clang = null, auth = null;
@@ -424,7 +425,7 @@
   // an album counts as empty when it has no photo and no words (its choice buttons and the photo sizes do not count)
   function albumEmpty(it, f) {
     var keep = {};
-    (f.fields || []).forEach(function (sf) { if (!sf.role && !hasChoices(sf)) keep[sf.key] = 1; });
+    (f.fields || []).forEach(function (sf) { if (!sf.role && !sf.perPhoto && !sf.hidden && !hasChoices(sf)) keep[sf.key] = 1; });
     var o = {};
     Object.keys(it || {}).forEach(function (k) { if (keep[k]) o[k] = it[k]; });
     return itemEmpty(o);
@@ -631,43 +632,116 @@
 
   /* ---------------------------------------------------------------- albums: works with several photos each
      Schema: a "list" field with "ui": "albums". Its image sub-fields (p1 … p10) hold the photos in order, the first is the main
-     one (cover); a text sub-field with "role": "dims" keeps each photo's "WxH" ("1600x1200,1200x1600"), so the site can lay the
-     photos out before they load; a sub-field with "choices" is a row of buttons; the other text fields are shown once per content
+     one (cover). Text sub-fields that go photo by photo (comma-separated, in the photos' order, kept in step by this editor):
+       "role": "dims"     each photo's "WxH", filled on upload (the site lays the photos out before they load)
+       "role": "thumbs"   a small preview ('/i/…', about 400 px) uploaded with each photo; the editor shows it instead of the big one
+       "perPhoto": true   anything else, kept as it is (the site's own file of a photo moved in from the old gallery, …)
+     A sub-field with "choices" is a row of buttons; "hidden": true is not shown; the other text fields are shown once per content
      language (the first language open, the others folded). Optional: "addLabel", "firstNote" (a line under the first work).
-     The newest work goes to the top. Photos are made smaller in the browser and sent one at a time, with a progress bar. */
+     The newest work goes to the top. Photos are made smaller in the browser and sent one at a time, with a progress bar.
+     Order of photos and of works: drag by the handle (finger or mouse; arrow keys on it), or the arrow buttons. */
   var pend = typeof WeakMap === 'function' ? new WeakMap() : null;   // work -> photos still on their way [{file, st, prog, err, url}]
   var views = typeof WeakMap === 'function' ? new WeakMap() : null;  // work -> its drawn card (redraws the photos only)
   var notes = typeof WeakMap === 'function' ? new WeakMap() : null;  // work -> a line shown on its card (too many photos)
-  var localUrl = {};                                                  // '/i/…' -> blob: URL of a photo sent from this browser (no second download)
+  var localUrl = {};                                                  // '/i/…' -> blob: URL of the preview made in this browser
   var queue = [], sending = 0;
+  var THUMB = 400;
 
   function albumParts(f) {
     var sub = f.fields || [];
+    var per = sub.filter(function (x) { return x.type === 'text' && (x.role === 'dims' || x.role === 'thumbs' || x.perPhoto); });
+    var keyOf = function (role) { return (per.filter(function (x) { return x.role === role; })[0] || {}).key || null; };
     return {
       imgs: sub.filter(function (x) { return x.type === 'image'; }).map(function (x) { return x.key; }),
-      dims: (sub.filter(function (x) { return x.role === 'dims'; })[0] || {}).key || null,
-      choice: sub.filter(hasChoices)[0] || null,
-      texts: sub.filter(function (x) { return (x.type === 'text' || x.type === 'textarea') && !x.role && !hasChoices(x); })
+      per: per.map(function (x) { return x.key; }), dims: keyOf('dims'), thumbs: keyOf('thumbs'),
+      choice: sub.filter(function (x) { return hasChoices(x) && !x.hidden; })[0] || null,
+      texts: sub.filter(function (x) { return (x.type === 'text' || x.type === 'textarea') && !x.role && !x.perPhoto && !x.hidden && !hasChoices(x); })
     };
   }
+  // [{p: '/i/…', v: {per-photo key: value}}] in order
   function photosOf(it, P) {
-    var d = String(P.dims && it[P.dims] || '').split(','), out = [];
-    P.imgs.forEach(function (k) { if (typeof it[k] === 'string' && it[k]) { var dd = d[out.length] || ''; out.push({ p: it[k], d: /^\d+x\d+$/.test(dd) ? dd : '' }); } });
+    var cols = {}, out = [];
+    P.per.forEach(function (q) { cols[q] = String(it[q] || '').split(','); });
+    P.imgs.forEach(function (k) {
+      if (typeof it[k] !== 'string' || !it[k]) return;
+      var v = {};
+      P.per.forEach(function (q) { v[q] = cols[q][out.length] || ''; });
+      out.push({ p: it[k], v: v });
+    });
     return out;
   }
-  // writes the photos back as p1 … pN (no gaps) and their sizes; keeps the keys in the schema's order (so "unsaved" is exact)
+  // writes the photos back as p1 … pN (no gaps) with their per-photo values; keeps the keys in the schema's order (exact "unsaved")
   function setPhotos(it, P, list, f) {
     P.imgs.forEach(function (k, i) { if (list[i]) it[k] = list[i].p; else delete it[k]; });
-    if (P.dims) { if (list.length) it[P.dims] = list.map(function (x) { return x.d || ''; }).join(','); else delete it[P.dims]; }
+    P.per.forEach(function (q) {
+      var vals = list.map(function (x) { return String(x.v && x.v[q] || '').replace(/,/g, ''); });
+      if (vals.some(Boolean)) it[q] = vals.join(','); else delete it[q];
+    });
     var o = {};
     (f.fields || []).forEach(function (sf) { if (it[sf.key] !== undefined) o[sf.key] = it[sf.key]; });
     Object.keys(it).forEach(function (k) { if (!(k in o)) o[k] = it[k]; });
     Object.keys(it).forEach(function (k) { delete it[k]; });
     Object.keys(o).forEach(function (k) { it[k] = o[k]; });
   }
-  var imgUrl = function (p) { return localUrl[p] || (p.indexOf('/i/') === 0 ? API + p : siteUrl(p)); };
+  var imgUrl = function (p) { return p.indexOf('/i/') === 0 ? API + p : siteUrl(p); };
+  var prevUrl = function (x, P) { return localUrl[x.p] || (P.thumbs && x.v[P.thumbs] ? imgUrl(x.v[P.thumbs]) : imgUrl(x.p)); };
   var pendOf = function (it) { return (pend && pend.get(it)) || []; };
   var activeOf = function (it) { return pendOf(it).filter(function (e) { return e.st !== 'err'; }); };
+
+  // drag by a handle (o.handle, else [data-drag], inside an item): a copy follows the finger, the place it lands on is outlined, the page scrolls
+  // near the top and bottom edges; o.onMove(from, to) changes the data. o.ghost(item): the part of the item that is copied.
+  function dragSort(box, sel, o) {
+    box.addEventListener('pointerdown', function (ev) {
+      var hd = ev.target.closest ? ev.target.closest(o.handle || '[data-drag]') : null;
+      if (!hd || (ev.pointerType === 'mouse' && ev.button !== 0)) return;
+      var item = hd.closest(sel);
+      if (!item || item.parentNode !== box) return;
+      var items = Array.prototype.filter.call(box.children, function (el) { return el.matches(sel); });
+      var from = items.indexOf(item);
+      if (from < 0 || items.length < 2) return;
+      ev.preventDefault(); ev.stopPropagation();                         // a photo's handle does not also drag its work
+      var src = (o.ghost && o.ghost(item)) || item, r = src.getBoundingClientRect();
+      var g = src.cloneNode(true);
+      g.removeAttribute('id');
+      Array.prototype.forEach.call(g.querySelectorAll('[id]'), function (x) { x.removeAttribute('id'); });
+      g.className += ' drag-ghost';
+      g.setAttribute('aria-hidden', 'true');
+      g.style.cssText = 'position:fixed;left:' + r.left + 'px;top:' + r.top + 'px;width:' + r.width + 'px;height:' + r.height + 'px;margin:0;z-index:60;pointer-events:none';
+      document.body.appendChild(g);
+      item.classList.add('is-lifted'); box.classList.add('is-sorting');
+      var ox = ev.clientX - r.left, oy = ev.clientY - r.top, px = ev.clientX, py = ev.clientY, to = from, raf = 0, pid = ev.pointerId;
+      try { hd.setPointerCapture(pid); } catch (e) {}
+      function aim() {
+        g.style.left = (px - ox) + 'px'; g.style.top = (py - oy) + 'px';
+        var best = from, bd = Infinity;
+        items.forEach(function (el, i) {
+          var q = el.getBoundingClientRect();
+          var d = px >= q.left && px <= q.right && py >= q.top && py <= q.bottom ? -1 : Math.pow(px - (q.left + q.right) / 2, 2) + Math.pow(py - (q.top + q.bottom) / 2, 2);
+          if (d < bd) { bd = d; best = i; }
+        });
+        to = best;
+        items.forEach(function (el, i) { el.classList.toggle('is-target', i === to && to !== from); });
+      }
+      function edge() {
+        raf = 0;
+        var v = py < 90 ? -14 : py > window.innerHeight - 130 ? 14 : 0;
+        if (!v) return;
+        window.scrollBy(0, v); aim();
+        raf = requestAnimationFrame(edge);
+      }
+      function move(e) { if (e.pointerId !== pid) return; px = e.clientX; py = e.clientY; aim(); if (!raf) raf = requestAnimationFrame(edge); }
+      function end(e) {
+        if (e.pointerId !== pid) return;
+        hd.removeEventListener('pointermove', move); hd.removeEventListener('pointerup', end); hd.removeEventListener('pointercancel', end);
+        if (raf) cancelAnimationFrame(raf);
+        if (g.parentNode) g.parentNode.removeChild(g);
+        items.forEach(function (el) { el.classList.remove('is-target', 'is-lifted'); });
+        box.classList.remove('is-sorting');
+        if (e.type === 'pointerup' && to !== from) o.onMove(from, to);
+      }
+      hd.addEventListener('pointermove', move); hd.addEventListener('pointerup', end); hd.addEventListener('pointercancel', end);
+    });
+  }
 
   function sendImg(blob, onProg) {
     return new Promise(function (res) {
@@ -708,18 +782,28 @@
     sending = 1;
     e.st = 'prep'; e.prog = 0; tick(e); queueStatus(e);
     shrinkWH(e.file).then(function (r) {
-      e.blob = r.b; e.d = r.w + 'x' + r.h;
-      if (!e.url) e.url = URL.createObjectURL(r.b);
+      e.blob = r.b; e.tb = r.t; e.d = r.w + 'x' + r.h;
+      if (!e.url) e.url = URL.createObjectURL(r.t || r.b);
       e.st = 'up'; tick(e); queueStatus(e);
-      return withSession(function () { return sendImg(e.blob, function (p) { e.prog = p; tick(e); }); });
+      return withSession(function () { return sendImg(e.blob, function (p) { e.prog = p * 0.9; tick(e); }); }).then(function (r1) {
+        if (r1.status !== 200 || !r1.j || !r1.j.path || !e.P.thumbs || !e.tb) return r1;
+        // the small preview: if it does not get through, the editor shows the big photo instead
+        return withSession(function () { return sendImg(e.tb); }).then(function (r2) {
+          if (r2.status === 200 && r2.j && r2.j.path) r1.thumb = r2.j.path;
+          return r1;
+        });
+      });
     }, function (er) { return { status: -1, why: er }; }).then(function (r) {
       e.tries++;
       if (r.status === 200 && r.j && r.j.path) {
         var list = pendOf(e.it), i = list.indexOf(e);
         if (i >= 0) list.splice(i, 1);
         localUrl[r.j.path] = e.url;
-        var ph = photosOf(e.it, e.P);
-        if (ph.length < e.P.imgs.length) { ph.push({ p: r.j.path, d: e.d }); setPhotos(e.it, e.P, ph, e.f); }
+        var ph = photosOf(e.it, e.P), v = {};
+        e.P.per.forEach(function (q) { v[q] = ''; });
+        if (e.P.dims) v[e.P.dims] = e.d;
+        if (e.P.thumbs && r.thumb) v[e.P.thumbs] = r.thumb;
+        if (ph.length < e.P.imgs.length) { ph.push({ p: r.j.path, v: v }); setPhotos(e.it, e.P, ph, e.f); }
         upDone++;
         done(e);
       } else if (r.status === 0 && e.tries < 2) {
@@ -760,6 +844,7 @@
     if (arr.length === 1 && openSet && arr[0] && typeof arr[0] === 'object') openSet.add(arr[0]);
     var addLabel = L(f.addLabel) || t('addWork');
     var listBox = h('div', { class: 'alb__list' });
+    var listHint = h('p', { class: 'field__h alb__lhint', text: t('worksHint') });
     var pickId = id + '-new';
     var picker = h('input', { type: 'file', id: pickId, class: 'filein', accept: 'image/*', multiple: true });
     var addBtn = h('label', { class: 'btn btn--a alb__add', for: pickId }, icon('plus'), h('span', { text: addLabel }));
@@ -779,6 +864,18 @@
       var first = listBox.firstElementChild;
       if (first) setTimeout(function () { first.scrollIntoView({ block: 'start', behavior: 'smooth' }); }, 60);
     });
+    function moveWork(from, to, focusDrag) {
+      if (to < 0 || to >= arr.length || to === from) return;
+      arr.splice(to, 0, arr.splice(from, 1)[0]);
+      draw(); dirtyCheck();
+      var c = listBox.children[to];
+      if (!c) return;
+      var b = focusDrag ? c.querySelector('.alb__drag') : c.querySelector('.alb__acts button:' + (to < from ? 'first-child' : 'nth-child(2)'));
+      if (b && b.disabled) b = c.querySelector('.alb__acts button:not([disabled])');
+      if (b) b.focus();
+      c.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    }
+    dragSort(listBox, '.alb__i', { handle: '[data-drag="work"]', ghost: function (item) { return item.querySelector('.alb__hrow'); }, onMove: function (a, b) { moveWork(a, b, false); } });
     function title(it, i) {
       var tf = P.texts[0];
       var v = tf ? (getV(it, tf, langs()[0]) || langs().map(function (l) { return getV(it, tf, l); }).filter(Boolean)[0] || '') : '';
@@ -792,9 +889,15 @@
       var name = h('b', { class: 'alb__name' });
       var sub = h('small', { class: 'alb__sub' });
       var head = h('button', { type: 'button', class: 'alb__h', 'aria-expanded': String(isOpen) }, thumb, h('span', { class: 'alb__t' }, name, sub), icon('chev'));
+      var drag = h('button', { type: 'button', class: 'alb__drag', 'data-drag': 'work', title: t('dragWork') }, icon('grip'));
+      drag.addEventListener('keydown', function (e) {
+        var d = e.key === 'ArrowUp' ? -1 : e.key === 'ArrowDown' ? 1 : 0;
+        if (d) { e.preventDefault(); moveWork(i, i + d, true); }
+      });
       var grid = h('div', { class: 'ph2s' });
       var warn = h('p', { class: 'alb__warn', role: 'note', text: t('noPhoto') });
       var note = h('p', { class: 'alb__warn alb__note', role: 'status', hidden: true });
+      var hint = h('p', { class: 'field__h ph2__hint', text: t('photoHint') });
       var pickId2 = id + '-p-' + i + '-' + Math.random().toString(36).slice(2, 7);
       var picker2 = h('input', { type: 'file', id: pickId2, class: 'filein', accept: 'image/*', multiple: true });
       picker2.addEventListener('change', function () {
@@ -805,33 +908,43 @@
       function headText() {
         var ph = photosOf(it, P), act = activeOf(it).length;
         thumb.textContent = '';
-        if (ph[0]) thumb.appendChild(h('img', { src: imgUrl(ph[0].p), alt: '', loading: 'lazy', decoding: 'async' }));
+        if (ph[0]) thumb.appendChild(h('img', { src: prevUrl(ph[0], P), alt: '', loading: 'lazy', decoding: 'async' }));
         else thumb.appendChild(icon('photo'));
         name.textContent = title(it, i);
+        drag.setAttribute('aria-label', t('dragWork') + ': ' + name.textContent);
         sub.textContent = t('nPhotos', { n: ph.length + act }) + (i === 0 && f.firstNote ? ' · ' + L(f.firstNote) : '');
       }
+      function movePhoto(from, to, focusSel) {
+        var list = photosOf(it, P);
+        if (to < 0 || to >= list.length || to === from) return;
+        list.splice(to, 0, list.splice(from, 1)[0]);
+        setPhotos(it, P, list, f); photos(); dirtyCheck();
+        var cell = grid.children[to];
+        if (cell) { var b = cell.querySelector(focusSel + ':not([disabled])') || cell.querySelector('button:not([disabled])'); if (b) b.focus(); }
+      }
+      dragSort(grid, '.ph2:not(.is-pend):not(.ph2--add)', { handle: '[data-drag="photo"]', onMove: function (a, b) { movePhoto(a, b, '.ph2__drag'); } });
       function photos() {
         var ph = photosOf(it, P), pl = pendOf(it);
         grid.textContent = '';
         ph.forEach(function (x, k) {
-          function move(to) {
-            var list = photosOf(it, P), m = list.splice(k, 1)[0];
-            list.splice(to, 0, m); setPhotos(it, P, list, f); photos(); dirtyCheck();
-            var cell = grid.children[to];
-            if (cell) { var b = cell.querySelector('[data-act="' + (to > k ? 'right' : 'left') + '"]:not([disabled])') || cell.querySelector('button:not([disabled])'); if (b) b.focus(); }
-          }
           var n = t('photoN', { i: k + 1 });
+          var dh = h('button', { type: 'button', class: 'ph2__drag', 'data-drag': 'photo', 'aria-label': t('drag') + ': ' + n, title: t('drag') }, icon('grip'));
+          dh.addEventListener('keydown', function (e) {
+            var d = e.key === 'ArrowLeft' || e.key === 'ArrowUp' ? -1 : e.key === 'ArrowRight' || e.key === 'ArrowDown' ? 1 : 0;
+            if (d) { e.preventDefault(); movePhoto(k, k + d, '.ph2__drag'); }
+          });
           grid.appendChild(h('div', { class: 'ph2' + (k === 0 ? ' is-cover' : ''), role: 'group', 'aria-label': n },
-            h('img', { src: imgUrl(x.p), alt: n, loading: 'lazy', decoding: 'async' }),
-            k === 0 ? h('span', { class: 'ph2__badge', text: t('cover') }) : null,
+            h('img', { src: prevUrl(x, P), alt: n, loading: 'lazy', decoding: 'async', draggable: 'false' }),
+            dh,
             h('button', { type: 'button', class: 'ph2__x', 'aria-label': t('removePhoto') + ': ' + n, title: t('removePhoto'), onclick: function () {
               if (!window.confirm(t('removePhotoQ'))) return;
               var list = photosOf(it, P); list.splice(k, 1); setPhotos(it, P, list, f); photos(); dirtyCheck();
             } }, icon('x')),
             h('div', { class: 'ph2__bar' },
-              h('button', { type: 'button', 'data-act': 'left', 'aria-label': t('left') + ': ' + n, title: t('left'), disabled: k === 0, onclick: function () { move(k - 1); } }, icon('left')),
-              k === 0 ? h('span', { class: 'ph2__gap' }) : h('button', { type: 'button', class: 'ph2__star', 'aria-label': t('makeCover') + ': ' + n, title: t('makeCover'), onclick: function () { move(0); } }, icon('star'), h('span', { text: t('makeCover') })),
-              h('button', { type: 'button', 'data-act': 'right', 'aria-label': t('right') + ': ' + n, title: t('right'), disabled: k === ph.length - 1, onclick: function () { move(k + 1); } }, icon('right')))));
+              k === 0 ? h('span', { class: 'ph2__badge', text: t('cover') })
+                : h('button', { type: 'button', 'data-act': 'left', 'aria-label': t('left') + ': ' + n, title: t('left'), onclick: function () { movePhoto(k, k - 1, '[data-act="left"]'); } }, icon('left')),
+              k === 0 ? null : h('button', { type: 'button', class: 'ph2__star', 'aria-label': t('makeCover') + ': ' + n, title: t('makeCover'), onclick: function () { movePhoto(k, 0, '.ph2__drag'); } }, icon('star')),
+              h('button', { type: 'button', 'data-act': 'right', 'aria-label': t('right') + ': ' + n, title: t('right'), disabled: k === ph.length - 1, onclick: function () { movePhoto(k, k + 1, '[data-act="right"]'); } }, icon('right')))));
         });
         pl.forEach(function (e) {
           var cell = h('div', { class: 'ph2 is-pend' + (e.st === 'err' ? ' is-err' : '') },
@@ -856,7 +969,6 @@
         headText();
       }
       if (views) views.set(it, { photos: photos });
-      var hint = h('p', { class: 'field__h ph2__hint', text: t('photoHint') });
       var body = h('div', { class: 'alb__b' }, h('div', null, grid, hint), warn, note);
       if (P.choice) body.appendChild(textField(it, P.choice, id + '-' + i + '-c', null, { onPick: function () { headText(); } }));
       var L0 = langs()[0] || null, rest = langs().slice(1);
@@ -878,15 +990,15 @@
         body.appendChild(more);
       }
       body.appendChild(h('div', { class: 'alb__acts' },
-        h('button', { type: 'button', class: 'btn btn--s', disabled: i === 0, onclick: function () { arr.splice(i - 1, 0, arr.splice(i, 1)[0]); draw(); dirtyCheck(); focusCard(i - 1, 'up'); } }, icon('up'), h('span', { text: t('up') })),
-        h('button', { type: 'button', class: 'btn btn--s', disabled: i === arr.length - 1, onclick: function () { arr.splice(i + 1, 0, arr.splice(i, 1)[0]); draw(); dirtyCheck(); focusCard(i + 1, 'down'); } }, icon('down'), h('span', { text: t('down') })),
+        h('button', { type: 'button', class: 'btn btn--s', disabled: i === 0, onclick: function () { moveWork(i, i - 1, false); } }, icon('up'), h('span', { text: t('up') })),
+        h('button', { type: 'button', class: 'btn btn--s', disabled: i === arr.length - 1, onclick: function () { moveWork(i, i + 1, false); } }, icon('down'), h('span', { text: t('down') })),
         h('button', { type: 'button', class: 'btn btn--s btn--danger', onclick: function () {
           if (!albumEmpty(it, f) && !window.confirm(t('removeWorkQ'))) return;
           queue = queue.filter(function (e) { if (e.it === it) { busy--; return false; } return true; });
           if (pend) pend['delete'](it);
           arr.splice(i, 1); draw(); dirtyCheck();
         } }, icon('trash'), h('span', { text: t('removeWork') }))));
-      var box = h('section', { class: 'alb__i', 'data-open': String(isOpen) }, head, body);
+      var box = h('section', { class: 'alb__i', 'data-open': String(isOpen) }, h('div', { class: 'alb__hrow' }, drag, head), body);
       head.addEventListener('click', function () {
         var o = box.getAttribute('data-open') !== 'true';
         box.setAttribute('data-open', String(o)); head.setAttribute('aria-expanded', String(o));
@@ -895,24 +1007,18 @@
       photos();
       return box;
     }
-    function focusCard(i, which) {
-      var c = listBox.children[i]; if (!c) return;
-      var b = c.querySelector('.alb__acts button:' + (which === 'up' ? 'first-child' : 'nth-child(2)'));
-      if (b && b.disabled) b = c.querySelector('.alb__acts button:not([disabled])');
-      if (b) b.focus();
-      c.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
-    }
     function draw() {
       listBox.textContent = '';
       arr.forEach(function (it, i) { if (it && typeof it === 'object') listBox.appendChild(card(it, i)); });
       if (!arr.length) listBox.appendChild(h('p', { class: 'alb__empty', text: t('emptyAlbums', { b: addLabel }) }));
+      listHint.hidden = arr.length < 2;
       count.textContent = t('items', { n: arr.length, max: max });
       addBtn.classList.toggle('is-off', arr.length >= max);
       picker.disabled = arr.length >= max;
     }
     draw();
     return h('div', { class: 'field alb' }, f.label ? h('span', { class: 'field__l' }, L(f.label, f.key), count) : null,
-      f.help ? h('p', { class: 'field__h', text: L(f.help) }) : null, picker, addBtn, listBox);
+      f.help ? h('p', { class: 'field__h', text: L(f.help) }) : null, picker, addBtn, listHint, listBox);
   }
 
   function renderEditor() {
@@ -951,18 +1057,18 @@
       };
       if (s.byLang && langs().length) {
         // texts grouped by language: one folding group per language (the first open), the other fields before them
-        (s.fields || []).forEach(function (f, fi) { if (!isI18n(f) || f.type === 'list') body.appendChild(one(f, id + '-' + fi)); });
+        (s.fields || []).forEach(function (f, fi) { if (!f.hidden && (!isI18n(f) || f.type === 'list')) body.appendChild(one(f, id + '-' + fi)); });
         langs().forEach(function (l, li) {
           var key = id + ':' + l;
           if (open[key] === undefined) open[key] = li === 0;
           var g = h('details', { class: 'lgrp' }, h('summary', { class: 'lgrp__h' }, h('span', { text: langName(l) }), icon('chev')));
           g.open = !!open[key];
           g.addEventListener('toggle', function () { open[key] = g.open; });
-          (s.fields || []).forEach(function (f, fi) { if (isI18n(f) && f.type !== 'list') g.appendChild(textField(cur, f, id + '-' + fi + '-' + l, l)); });
+          (s.fields || []).forEach(function (f, fi) { if (!f.hidden && isI18n(f) && f.type !== 'list') g.appendChild(textField(cur, f, id + '-' + fi + '-' + l, l)); });
           body.appendChild(g);
         });
       } else {
-        (s.fields || []).forEach(function (f, fi) { body.appendChild(one(f, id + '-' + fi)); });
+        (s.fields || []).forEach(function (f, fi) { if (!f.hidden) body.appendChild(one(f, id + '-' + fi)); });
       }
       var card = h('section', { class: 'card', 'data-open': String(open[id]) }, head, body);
       head.addEventListener('click', function () { open[id] = !open[id]; card.setAttribute('data-open', String(open[id])); head.setAttribute('aria-expanded', String(open[id])); });
@@ -1002,9 +1108,9 @@
       saveBtn.textContent = t('save');
       if (r.status === 200) {
         base = clone(data);
-        var listsChanged = JSON.stringify(cur) !== JSON.stringify(data);
-        cur = clone(data);
-        if (listsChanged) renderEditor();
+        // the fields on screen keep writing into cur: it is replaced only together with a new drawing (empty list items dropped).
+        // (Before 24.11 it was always replaced, so after a first save the edits went into the old object and «Saglabāt» stayed off.)
+        if (JSON.stringify(cur) !== JSON.stringify(data)) { cur = clone(data); renderEditor(); }
         dirtyCheck();
         status(r.j.sandbox ? t('savedDemo') : t('saved'), 'ok');
         app.querySelectorAll('.field.is-changed').forEach(function (el) { el.classList.remove('is-changed'); });
@@ -1078,6 +1184,14 @@
       x.drawImage(cur2, 0, 0, w, hh);
       if (cur2 !== src) { cur2.width = 0; cur2.height = 0; }
       if (src.close) src.close();
+      // the editor's preview (about 400 px, a few dozen KB): lists open fast on mobile data
+      var kt = Math.min(1, THUMB / Math.max(w, hh)), tc = document.createElement('canvas');
+      tc.width = Math.max(1, Math.round(w * kt)); tc.height = Math.max(1, Math.round(hh * kt));
+      var tx = tc.getContext('2d'); tx.imageSmoothingQuality = 'high'; tx.drawImage(c, 0, 0, tc.width, tc.height);
+      var thumbP = toBlob(tc, 'image/webp', 0.72).then(function (tb) {
+        if (!tb || tb.type !== 'image/webp') return toBlob(tc, 'image/jpeg', 0.75);
+        return tb;
+      }).then(function (tb) { tc.width = 0; tc.height = 0; return tb; }, function () { return null; });
       var qs = [0.86, 0.8, 0.72, 0.62, 0.52];
       var i = 0;
       function next() {
@@ -1088,7 +1202,7 @@
           return b;
         }).then(function (b) {
           if (!b) throw 'decode';
-          if (b.size <= 2 * 1024 * 1024 - 2048) { c.width = 0; c.height = 0; return { b: b, w: w, h: hh }; }
+          if (b.size <= 2 * 1024 * 1024 - 2048) { c.width = 0; c.height = 0; return thumbP.then(function (tb) { return { b: b, w: w, h: hh, t: tb }; }); }
           return next();
         });
       }
