@@ -85,7 +85,7 @@
     fSubmit: 'Отправить запрос', fNote: 'Запрос и файлы придут прямо к нам на почту.', fAlt: 'Или напишите напрямую:',
     openMail: 'Открыть готовое письмо', failAddr: 'Или напишите на этот адрес:',
     copyAddr: 'Скопировать адрес', copyText: 'Скопировать текст письма',
-    ftrFacts: '© 2026 Semar kitchens OÜ', up: 'Наверх', socIg: 'Semar kitchens в Instagram', socFb: 'Semar kitchens в Facebook',
+    credit: 'Сайт', ftrFacts: '© 2026 Semar kitchens OÜ', up: 'Наверх', socIg: 'Semar kitchens в Instagram', socFb: 'Semar kitchens в Facebook',
     lbAria: 'Фото крупно', lbClose: 'Закрыть', lbPrev: 'Предыдущее фото', lbNext: 'Следующее фото'
   };
   var EN = {
@@ -164,7 +164,7 @@
     fSubmit: 'Send request', fNote: 'Your request and files come straight to our e-mail.', fAlt: 'Or write directly:',
     openMail: 'Open the ready e-mail', failAddr: 'Or write to this address:',
     copyAddr: 'Copy address', copyText: 'Copy message text',
-    ftrFacts: '© 2026 Semar kitchens OÜ', up: 'Top', socIg: 'Semar kitchens on Instagram', socFb: 'Semar kitchens on Facebook',
+    credit: 'Website', ftrFacts: '© 2026 Semar kitchens OÜ', up: 'Top', socIg: 'Semar kitchens on Instagram', socFb: 'Semar kitchens on Facebook',
     lbAria: 'Photo full size', lbClose: 'Close', lbPrev: 'Previous photo', lbNext: 'Next photo'
   };
   var DICT = { ru: RU, en: EN };
